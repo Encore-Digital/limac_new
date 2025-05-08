@@ -12,13 +12,14 @@
   <link rel="shortcut icon" href="./favicon.ico">
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 
   <!-- CSS Implementing Plugins -->
   <link rel="stylesheet" href="./assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css">
   <link rel="stylesheet" href="./assets/vendor/aos/dist/aos.css">
   <link rel="stylesheet" href="./assets/vendor/swiper/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="./assets/css/theme.min.css">
@@ -26,7 +27,7 @@
 
 <body>
   <!-- ========== HEADER ========== -->
-  <header id="header" class="navbar navbar-expand-lg navbar-end navbar-dark bg-primary" data-hs-header-options='{
+  <header id="header" class="navbar navbar-expand-lg navbar-end navbar-light" data-hs-header-options='{
             "fixMoment": 1000,
             "fixEffect": "slide"
           }'>
@@ -264,7 +265,7 @@
 
               <!-- Button -->
               <li class="nav-item">
-                <a class="btn btn-dark btn-transition" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">Iniciar Sesión</a>
+                <a class="btn btn-primary btn-transition" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">Iniciar Sesión</a>
               </li>
               <!-- End Button -->
             </ul>
@@ -279,29 +280,40 @@
   <!-- ========== MAIN CONTENT ========== -->
   <main id="content" role="main">
     <!-- Thumbs Slider -->
-    <div class="">
-      <div class="">
-        <!-- Slide -->
-        <div class="sbg-img-start bg-img-start" style="background-image: url(./assets/img/nosotros/bkg015.jpg);">
-          <div class="card-title d-flex align-items-center position-relative">
-            <div class="container content-space-4">
-              <div class="row align-items-md-center">
-                <div class="col-md-6">
-                </div>
-                <div class="col-md-6 pt-5 pb-5">
-                  <h2 class="card-title text-black pt-3 pb-2">Somos la alternativa confiable<br>enfocada en sus necesidades</h2>
-                </div>
-                <!-- End Col -->
-              </div>
-              <!-- End Row -->
+    <!-- Hero -->
+    <div class="overflow-hidden">
+      <div class="container content-space-t-1 content-space-b-3">
+        <div class="row justify-content-lg-between align-items-md-center">
+          <div class="col-md-6">
+            <div class="position-relative my-3 mx-3">
+              <img class="img-fluid rounded-2" src="./assets/img/nosotros/bkg0151.jpg" alt="Image Description" data-aos="fade-right">
+              <div class="position-absolute top-0 end-0 w-100 h-100 bg-soft-primary rounded-2 zi-n1 mt-5 me-5" data-aos="fade-right" data-aos-delay="1000"></div>
             </div>
-
-            <!-- End Col -->
           </div>
+          <!-- End Col -->
+
+          <div class="col-md-6 col-lg-5 my-5 mb-md-0">
+            <!-- Heading -->
+            <div class="mb-5">
+              <h1 class="display-5 mb-3">
+                <span class="text-primary text-highlight" data-aos="fade-left">
+                  <span class="js-typedjs" data-hs-typed-options='{
+                          "strings": ["Somos la alternativa confiable enfocada en sus necesidades"],
+                          "typeSpeed": 45,
+                          "loop": false,
+                          "backSpeed": 30,
+                          "backDelay": 2500
+                        }'></span>
+                </span>
+              </h1>
+            </div>
+          </div>
+          <!-- End Col -->
         </div>
-        <!-- End Slide -->
+        <!-- End Row -->
       </div>
     </div>
+    <!-- End Hero -->
 
     <div class="">
       <div class="">
@@ -311,11 +323,11 @@
             <div class="container content-space-2">
               <div class="row align-items-md-center">
                 <div class="col-md-6 pt-5 pb-5">
-                  <h3 class="text-primary pt-3 pb-2 display-6">Nuestra Historia</h3>
-                  <p class="pt-1 pb-3">En el 2013 se fundó Limac con la misión de brindar soluciones de tercerización innovadoras y asequibles de calidad a micro y pequeñas empresas del Perú. Por su parte, al igual que nuestra empresa, nuestro sitio web crece con las necesidades de nuestros clientes; es por eso que hemos implementado tecnologías propias de vanguardia para que su experiencia en línea sea tan placentera como si fuera atendido personalmente en nuestra oficina.</p>
+                  <h3 class="text-primary pt-3 pb-2 display-6" data-aos="fade-right">Nuestra Historia</h3>
+                  <p class="pt-1 pb-3" data-aos="fade-right">En el 2013 se fundó Limac con la misión de brindar soluciones de tercerización innovadoras y asequibles de calidad a micro y pequeñas empresas del Perú. Por su parte, al igual que nuestra empresa, nuestro sitio web crece con las necesidades de nuestros clientes; es por eso que hemos implementado tecnologías propias de vanguardia para que su experiencia en línea sea tan placentera como si fuera atendido personalmente en nuestra oficina.</p>
                 </div>
                 <div class="col-md-6">
-                  <div class="container mt-5">
+                  <div class="container mt-5" data-aos="fade-left">
                     <img src="./assets/img/nosotros/img_nosotros.png" class="d-block w-85 mx-auto" alt="Imagen 1">
                   </div>
                 </div>
@@ -366,7 +378,7 @@
 
                     </span>
 
-                    <div class="flex-grow-1 ms-3">
+                    <div class="flex-grow-1 ms-3 card-transition">
                       <h4 class="mb-1">Visión</h4>
                       <p class="text-body text-wrap mb-0">Consolidarnos como empresa líder en Perú, y ser el proveedor preferido de productos y servicios de alta calidad.</p>
                     </div>
@@ -387,7 +399,7 @@
 
                     </span>
 
-                    <div class="flex-grow-1 ms-3">
+                    <div class="flex-grow-1 ms-3 card-transition">
                       <h4 class="mb-1">Misión</h4>
                       <p class="text-body text-wrap mb-0">Contribuir a la productividad de nuestros clientes ofreciendo productos y servicios innovadores, competitivos, y rentables.</p>
                     </div>
@@ -409,7 +421,7 @@
 
                     </span>
 
-                    <div class="flex-grow-1 ms-3">
+                    <div class="flex-grow-1 ms-3 card-transition">
                       <h4 class="mb-1">Valores</h4>
                       <p class="text-body text-wrap mb-0">Profesionalismo, transparencia, puntualidad, excelencia, innovación.</p>
                     </div>
@@ -888,6 +900,7 @@
   <!-- JS Plugins Init. -->
   <script>
     (function() {
+
       // INITIALIZATION OF HEADER
       // =======================================================
       new HSHeader('#header').init()
@@ -901,7 +914,16 @@
           }
         })
 
-
+      document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.js-typedjs').forEach(function (el) {
+      try {
+        const options = JSON.parse(el.getAttribute('data-hs-typed-options'));
+        new Typed(el, options);
+      } catch (e) {
+        console.error('Typed.js: JSON inválido en data-hs-typed-options', e);
+      }
+      });
+      });
       // INITIALIZATION OF SHOW ANIMATIONS
       // =======================================================
       new HSShowAnimation('.js-animation-link')

@@ -12,13 +12,14 @@
   <link rel="shortcut icon" href="./favicon.ico">
 
   <!-- Font -->
-  <link href=" https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 
   <!-- CSS Implementing Plugins -->
   <link rel="stylesheet" href="./assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css">
   <link rel="stylesheet" href="./assets/vendor/aos/dist/aos.css">
   <link rel="stylesheet" href="./assets/vendor/swiper/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="./assets/css/theme.min.css">
@@ -26,7 +27,7 @@
 
 <body>
   <!-- ========== HEADER ========== -->
-  <header id="header" class="navbar navbar-expand-lg navbar-end navbar-dark bg-primary" data-hs-header-options='{
+  <header id="header" class="navbar navbar-expand-lg navbar-end navbar-light" data-hs-header-options='{
             "fixMoment": 1000,
             "fixEffect": "slide"
           }'>
@@ -264,7 +265,7 @@
 
               <!-- Button -->
               <li class="nav-item">
-                <a class="btn btn-dark btn-transition" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">Iniciar Sesión</a>
+                <a class="btn btn-primary btn-transition" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">Iniciar Sesión</a>
               </li>
               <!-- End Button -->
             </ul>
@@ -287,10 +288,10 @@
             <div class="col-lg-6">
               <div class="mb-5" data-aos="fade-right">
                 <h1 class="display-4 mb-3">
-                  Traducciones oficiales para trámites en el Ministerio de Relaciones Exteriores
+                  Traducciones oficiales para trámites en el
                   <span class="text-primary text-highlight-warning">
                     <span class="js-typedjs" data-hs-typed-options='{
-                            "strings": ["startup.", "future.", "success."],
+                            "strings": ["Ministerio de Relaciones Exteriores", "Ministerio de Relaciones Exteriores"],
                             "typeSpeed": 90,
                             "loop": true,
                             "backSpeed": 30,
@@ -1139,6 +1140,7 @@
   <!-- JS Plugins Init. -->
   <script>
     (function() {
+
       // INITIALIZATION OF HEADER
       // =======================================================
       new HSHeader('#header').init()
@@ -1152,7 +1154,16 @@
           }
         })
 
-
+      document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.js-typedjs').forEach(function (el) {
+      try {
+        const options = JSON.parse(el.getAttribute('data-hs-typed-options'));
+        new Typed(el, options);
+      } catch (e) {
+        console.error('Typed.js: JSON inválido en data-hs-typed-options', e);
+      }
+      });
+      });
       // INITIALIZATION OF SHOW ANIMATIONS
       // =======================================================
       new HSShowAnimation('.js-animation-link')
