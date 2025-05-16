@@ -27017,3 +27017,63 @@ a:hover .text-inherit {
   color: #377dff;
   font-family: "Maven Pro", sans-serif;
 }
+
+.logo-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.logo-track {
+  display: flex;
+  width: 200%; /* porque duplicaste los logos */
+  animation: scroll 20s linear infinite;
+}
+
+.logo-item {
+  flex: 0 0 auto;
+  width: 200px; /* o ajusta al tamaño de tu diseño */
+  padding: 0 20px;
+}
+
+.logo-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Animación */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.logo-item img {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.logo-item img:hover {
+  filter: grayscale(0%);
+}
+
+/* 🔹 Por defecto (afecta a móviles y todos) */
+body.index-page .navbar .nav-link {
+  color: #677788 !important; /* gris visible sobre fondo blanco */
+}
+
+@media (min-width: 992px) {
+  body.index-page .navbar.navbar-transparent .nav-link {
+    color: rgb(206, 206, 206) !important;
+  }
+  body.index-page .navbar:not(.navbar-transparent) .nav-link {
+    color: #677788 !important;
+  }
+  body.index-page .navbar .nav-link:hover {
+    color: #377dff !important;
+  }
+}

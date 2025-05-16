@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="./assets/css/theme.min.css">
 </head>
 
-<body>
+<body class="index-page">
   <!-- ========== HEADER ========== -->
   <header id="header" class="navbar navbar-expand-lg navbar-end navbar-absolute-top navbar-light navbar-show-hide" data-hs-header-options='{
             "fixMoment": 1000,
@@ -58,7 +58,7 @@
                 <a id="demosMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle active" aria-current="page" href="#" role="button">Servicios</a>
 
                 <!-- Mega Menu -->
-                <div class="hs-mega-menu dropdown-menu w-100 mt-n4" aria-labelledby="demosMegaMenu" style="min-width: 40rem;">
+                <div id="miMenu" class="hs-mega-menu dropdown-menu w-100 mt-n4" aria-labelledby="demosMegaMenu" style="min-width: 40rem;">
                   <!-- Promo -->
                   <div class="row">
                     <div class="col-lg-6">
@@ -1326,6 +1326,7 @@
         HSCore.components.HSCircles.init('.js-circle')
       })
 
+
       // INITIALIZATION OF HEADER
       // =======================================================
       new HSHeader('#header').init()
@@ -1354,6 +1355,53 @@
         }
       })
 
+      //scroll en el top
+        document.addEventListener("DOMContentLoaded", function () {
+      if (document.body.classList.contains('index-page')) {
+        var navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 10) {
+            navbar.classList.remove('navbar-transparent');
+          } else {
+            navbar.classList.add('navbar-transparent');
+          }
+        });
+      
+        // Inicial: establecer clase en carga
+        if (window.scrollY <= 10) {
+          navbar.classList.add('navbar-transparent');
+        }
+      }
+    });
+
+    //menu-espaciado 
+        document.addEventListener("DOMContentLoaded", function () {
+        const menu = document.getElementById("miMenu");
+        
+        // Verifica si la pantalla es >= 992px
+        if (window.matchMedia("(min-width: 992px)").matches) {
+          if (menu.classList.contains("mt-n4")) {
+            menu.classList.remove("mt-n4");
+            menu.classList.add("mt-n2");
+          }
+        }
+      
+        // Si quieres que también responda al redimensionamiento:
+        window.addEventListener("resize", function () {
+          if (window.matchMedia("(max-width: 992px)").matches) {
+            if (menu.classList.contains("mt-n4")) {
+              menu.classList.remove("mt-n4");
+              menu.classList.add("mt-n2");
+            }
+          } else {
+            // Vuelve a mt-n4 si el ancho baja de 992px
+            if (menu.classList.contains("mt-n2")) {
+              menu.classList.remove("mt-n2");
+              menu.classList.add("mt-n4");
+            }
+          }
+        });
+      }); 
 
       // INITIALIZATION OF BOOTSTRAP DROPDOWN
       // =======================================================
