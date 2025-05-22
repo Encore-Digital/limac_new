@@ -27,7 +27,7 @@
 
 <body>
   <!-- ========== HEADER ========== -->
-  <header id="header" class="navbar navbar-expand-lg navbar-end navbar-light" data-hs-header-options='{
+  <header id="header" class="navbar navbar-expand-lg navbar-end navbar-sticky-top navbar-light navbar-show-hide navbar-toggle" data-hs-header-options='{
             "fixMoment": 1000,
             "fixEffect": "slide"
           }'>
@@ -279,9 +279,10 @@
 
   <!-- ========== MAIN CONTENT ========== -->
   <main id="content" role="main">
-
+    <div class="bg-body" style="height: 100px;">
+    </div>
     <div class="bg-primary position-relative">
-      <div class="container content-space-b-1 position-relative z-2">
+      <div class="container content-space-t-2 content-space-t-3 position-relative z-2 mt-10">
         <div class="row justify-content-lg-between mb-10">
           <div class="col-lg-5 content-space-t-2 content-space-t-lg-3 mb-7 mb-lg-0">
             <!-- Heading -->
@@ -334,28 +335,30 @@
             <!-- Card -->
             <div class="card zi-2">
               <div class="card-body">
-                <div class="mb-4">
-                  <h3>Datos del servicio</h3>
-                </div>
+
                 <!-- Form -->
                 <form>
-                  <div class="row gx-3">
+                  <div class="mb-4">
+                    <h3>Datos del servicio</h3>
+                  </div>
+                  <!-- Servicio -->
+                  <!-- Servicio -->
+                  <div class="mb-3">
+                    <label class="form-label visually-hidden" for="selectServicio">Servicio</label>
+                    <select id="selectServicio" class="form-select form-select-lg" name="servicio">
+                      <option value="" selected disabled>Seleccione un servicio</option>
+                      <option value="Traducción">Traducción</option>
+                      <option value="Interpretación">Interpretación</option>
+                    </select>
+                  </div>
 
-                    <!-- Select -->
-                    <div class="mb-3">
-                      <label class="form-label visually-hidden" for="hireUsFormCountry">Traducción</label>
-                      <select id="hireUsFormCountry" class="form-select form-select-lg" name="hireUsFormNameCountry" aria-label="Country">
-                        <option value="" selected disabled>Seleccione un servicio</option>
-                        <option value="Traducción">Traducción</option>
-                        <option value="Interpretación">Interpretación</option>
-                      </select>
-                    </div>
-                    <!-- End Select -->
+                  <!-- =================== CAMPOS PARA TRADUCCIÓN =================== -->
+                  <div id="camposTraduccion" style="display: none;">
 
-                    <!-- Select -->
+                    <!-- Tipo de entrega -->
                     <div class="mb-3">
-                      <label class="form-label visually-hidden" for="hireUsFormCountry">Seleccione el tipo de entrega</label>
-                      <select id="hireUsFormCountry" class="form-select form-select-lg" name="hireUsFormNameCountry" aria-label="Country">
+                      <label class="form-label visually-hidden" for="selectEntrega">Tipo de entrega</label>
+                      <select id="selectEntrega" class="form-select form-select-lg" name="tipo_entrega">
                         <option value="" selected disabled>Seleccione el tipo de entrega</option>
                         <option value="MS Word - versión digital">MS Word - versión digital</option>
                         <option value="Certificada - versión digital">Certificada - versión digital</option>
@@ -363,13 +366,12 @@
                         <option value="Oficial - versión impresa">Oficial - versión impresa</option>
                       </select>
                     </div>
-                    <!-- End Select -->
 
-                    <!-- Select -->
+                    <!-- Idioma de origen -->
                     <div class="mb-3">
-                      <label class="form-label visually-hidden" for="hireUsFormCountry">Ingrese el idioma de origen</label>
-                      <select id="hireUsFormCountry" class="form-select form-select-lg" name="hireUsFormNameCountry" aria-label="Country">
-                        <option value="" selected disabled>Ingrese el idioma de origen</option>
+                      <label class="form-label visually-hidden" for="idiomaOrigen">Idioma de origen</label>
+                      <select id="idiomaOrigen" class="form-select form-select-lg" name="idioma_origen">
+                        <option value="" selected disabled>Idioma de origen</option>
                         <option value="Español (Perú)">Español (Perú)</option>
                         <option value="Español (España)">Español (España)</option>
                         <option value="Inglés (EE.UU.)">Inglés (EE.UU.)</option>
@@ -383,13 +385,12 @@
                         <option value="Quechua (Perú)">Quechua (Perú)</option>
                       </select>
                     </div>
-                    <!-- End Select -->
 
-                    <!-- Select -->
+                    <!-- Idioma de destino -->
                     <div class="mb-3">
-                      <label class="form-label visually-hidden" for="hireUsFormCountry">Ingrese el idioma de destino</label>
-                      <select id="hireUsFormCountry" class="form-select form-select-lg" name="hireUsFormNameCountry" aria-label="Country">
-                        <option value="" selected disabled>Ingrese el idioma de destino</option>
+                      <label class="form-label visually-hidden" for="idiomaDestino">Idioma de destino</label>
+                      <select id="idiomaDestino" class="form-select form-select-lg" name="idioma_destino">
+                        <option value="" selected disabled>Idioma de destino</option>
                         <option value="Español (Perú)">Español (Perú)</option>
                         <option value="Español (España)">Español (España)</option>
                         <option value="Inglés (EE.UU.)">Inglés (EE.UU.)</option>
@@ -403,44 +404,145 @@
                         <option value="Quechua (Perú)">Quechua (Perú)</option>
                       </select>
                     </div>
-                    <!-- End Select -->
-                    <div class="mb-4 mt-4">
-                      <h3>Datos del servicio</h3>
-                    </div>
-                    <!-- Form -->
-                    <div class="mb-3">
-                      <input type="text" class="form-control form-control-lg" name="hireUsFormNameFirstName" id="hireUsFormFirstName" placeholder="Nombre / Razón social">
-                    </div>
-                    <!-- End Form -->
-                    <!-- Form -->
-                    <div class="mb-3">
-                      <input type="email" class="form-control form-control-lg" name="hireUsFormNameWorkEmail" id="hireUsFormWorkEmail" placeholder="Correo Electronico" aria-label="email@site.com">
-                    </div>
-                    <!-- End Form -->
-                    <!-- Form -->
-                    <div class="mb-3">
-                      <input type="text" class="form-control form-control-lg" name="hireUsFormNameCompanyName" id="hireUsFormCompanyName" placeholder="Teléfono" aria-label="Htmlstream">
-                    </div>
-                    <!-- End Form -->
-                    <!-- Form -->
-                    <div class="mb-3">
-                      <input type="text" class="form-control form-control-lg" name="hireUsFormNameCompanyName" id="hireUsFormCompanyName" placeholder="DNI / RUC" aria-label="Htmlstream">
-                    </div>
-                    <!-- End Form -->
-                    <!-- Form -->
-                    <div class="mb-3">
-                      <label class="form-label visually-hidden" for="hireUsFormDetails">Details</label>
-                      <textarea class="form-control form-control-lg" name="hireUsFormNameDetails" id="hireUsFormDetails" placeholder="Escríbanos su consulta" aria-label="Tell us about your project" rows="4"></textarea>
-                    </div>
-                    <!-- End Form -->
 
-                    <div class="d-grid mb-2">
-                      <button type="submit" class="btn btn-primary btn-lg">Send inquiry</button>
+                    <div class="mb-3">
+                      <label class="form-label" for="archivo">Adjuntar archivo</label>
+                      <input class="form-control" type="file" id="archivo" name="archivo">
                     </div>
 
-                    <div class="text-center">
-                      <span class="form-text">We'll get back to you in 1-2 business days.</span>
+                  </div>
+
+                  <!-- =================== CAMPOS PARA INTERPRETACIÓN =================== -->
+                  <div id="camposInterpretacion" style="display: none;">
+
+                    <!--Evento Nombre -->
+                    <div class="mb-3">
+                      <input type="text" class="form-control form-control-lg" name="hireUsFormNameLastName" id="hireUsFormLasttName" placeholder="¿Cuál es el nombre de su evento?">
                     </div>
+
+                    <!-- IDIOMA DE ORIGEN -->
+                    <div class="mb-3">
+                      <select id="idiomaDestino" class="form-select form-select-lg" name="idioma_destino">
+                        <option value="" selected disabled>Idioma de origen: Inglés, Español, Francés... </option>
+                        <option value="Español (Perú)">Español</option>
+                        <option value="Inglés (EE.UU.)">Inglés</option>
+                        <option value="Francés (Francia)">Francés</option>
+                        <option value="Alemán (Alemania)">Alemán</option>
+                        <option value="Italiano (Italia)">Italiano</option>
+                        <option value="Portugués (Brasil)">Portugués</option>
+                        <option value="Quechua (Perú)">Japones</option>
+                        <option value="Quechua (Perú)">Quechua (Perú)</option>
+                      </select>
+                    </div>
+
+                    <!-- IDIOMA DESTINO -->
+                    <div class="mb-3">
+                      <select id="idiomaDestino" class="form-select form-select-lg" name="idioma_destino">
+                        <option value="" selected disabled>Idioma de destino: Inglés, Español, Francés... </option>
+                        <option value="Español (Perú)">Español</option>
+                        <option value="Inglés (EE.UU.)">Inglés</option>
+                        <option value="Francés (Francia)">Francés</option>
+                        <option value="Alemán (Alemania)">Alemán</option>
+                        <option value="Italiano (Italia)">Italiano</option>
+                        <option value="Portugués (Brasil)">Portugués</option>
+                        <option value="Quechua (Perú)">Japones</option>
+                        <option value="Quechua (Perú)">Quechua (Perú)</option>
+                      </select>
+                    </div>
+
+                    <div class="row">
+                      <!-- Fecha del evento -->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label" for="hireUsFormDetails">Fecha de Inicio</label>
+                        <input type="date" class="form-control form-control-lg" name="fecha_evento" id="fechaEvento" placeholder="Fecha del evento">
+                      </div>
+
+                      <!-- Hora del evento-->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label" for="hireUsFormDetails">Hora de Inicio</label>
+                        <input type="time" class="form-control form-control-lg" name="hora_evento" id="horaEvento" placeholder="Seleccione una hora">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <!-- Fecha del evento -->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label" for="hireUsFormDetails">Fecha de Fin</label>
+                        <input type="date" class="form-control form-control-lg" name="fecha_evento" id="fechaEvento" placeholder="Fecha del evento">
+                      </div>
+
+                      <!-- Hora del evento-->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label" for="hireUsFormDetails">Fecha de Término</label>
+                        <input type="time" class="form-control form-control-lg" name="hora_evento" id="horaEvento" placeholder="Seleccione una hora">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <!-- Lugar -->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label" for="hireUsFormDetails">Lugar de Evento</label>
+                        <input type="text" class="form-control form-control-lg" name="lugar" placeholder="">
+                      </div>
+
+                      <!-- Equipos-->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label" for="hireUsFormDetails">¿Necesita Equipos?</label>
+                        <select id="idiomaDestino" class="form-select" name="idioma_destino">
+                          <option value="" selected disabled></option>
+                          <option value="Sí">Si</option>
+                          <option value="No">No</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <input type="text" class="form-control form-control-lg" name="lugar" placeholder="Cantidad de Asistentes">
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="archivo">Adjuntar archivo</label>
+                      <input class="form-control" type="file" id="archivo" name="archivo">
+                    </div>
+                  </div>
+
+                  <!-- =================== CAMPOS DE INFORMACIÓN =================== -->
+                  <div class="mb-4">
+                    <h3>Su información</h3>
+                  </div>
+                  <!-- Nombre -->
+                  <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg" name="nombre" placeholder="Nombre / Razón social">
+                  </div>
+
+                  <!-- Correo -->
+                  <div class="mb-3">
+                    <input type="email" class="form-control form-control-lg" name="correo" placeholder="Correo Electrónico">
+                  </div>
+
+                  <!-- Teléfono -->
+                  <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg" name="telefono" placeholder="Teléfono">
+                  </div>
+
+                  <!-- DNI / RUC -->
+                  <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg" name="documento" placeholder="DNI / RUC">
+                  </div>
+
+                  <div class="mb-4">
+                    <h3>Consulta</h3>
+                  </div>
+
+                  <!-- Consulta -->
+                  <div class="mb-3">
+                    <textarea class="form-control form-control-lg" name="mensaje" placeholder="Escríbanos su consulta" rows="4"></textarea>
+                  </div>
+
+                  <!-- Botón -->
+                  <div class="d-grid mb-2">
+                    <button type="submit" class="btn btn-primary btn-lg">Enviar solicitud</button>
+                  </div>
+                  <p>Al enviar este formulario, acepta la <a href="politica-de-privacidad.html">política de privacidad</a> y los <a href="terminos-y-condiciones.html">términos</a> de este sitio web.</p>
                 </form>
                 <!-- End Form -->
               </div>
@@ -922,7 +1024,6 @@
         once: true
       });
 
-
       // INITIALIZATION OF SWIPER
       // =======================================================
       let activeIndex = 0
@@ -1001,5 +1102,20 @@
       });
     })()
   </script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const selectServicio = document.getElementById('selectServicio');
+  const camposTraduccion = document.getElementById('camposTraduccion');
+  const camposInterpretacion = document.getElementById('camposInterpretacion');
+
+  selectServicio.addEventListener('change', function () {
+    const valor = selectServicio.value;
+    camposTraduccion.style.display = (valor === 'Traducción') ? 'block' : 'none';
+    camposInterpretacion.style.display = (valor === 'Interpretación') ? 'block' : 'none';
+  });
+});
+</script>
+
 </body>
 </html>
