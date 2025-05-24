@@ -59,7 +59,7 @@
                 <a id="demosMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle active" aria-current="page" href="#" role="button">Servicios</a>
 
                 <!-- Mega Menu -->
-                <div class="hs-mega-menu dropdown-menu w-100 mt-n4" aria-labelledby="demosMegaMenu" style="min-width: 40rem;">
+                <div id="miMenu" class="hs-mega-menu dropdown-menu w-100 mt-n4" aria-labelledby="demosMegaMenu" style="min-width: 40rem;">
                   <!-- Promo -->
                   <div class="row">
                     <div class="col-lg-6">
@@ -550,7 +550,7 @@
                 <!-- Accordion Item -->
                 <div class="accordion-item px-5" data-aos="fade-up" data-aos-delay="100">
                   <div class="accordion-header" id="headingBasicsOne">
-                    <a class="accordion-button" role="button" data-bs-toggle="collapse" data-bs-target="#collapseBasicsOne" aria-expanded="true" aria-controls="collapseBasicsOne">
+                    <a class="accordion-button text-body" role="button" data-bs-toggle="collapse" data-bs-target="#collapseBasicsOne" aria-expanded="true" aria-controls="collapseBasicsOne">
                       ¿Cómo se calcula el costo del servicio de interpretación?
                     </a>
                   </div>
@@ -565,7 +565,7 @@
                 <!-- Accordion Item -->
                 <div class="accordion-item px-5" data-aos="fade-up" data-aos-delay="200">
                   <div class="accordion-header" id="headingBasicsTwo">
-                    <a class="accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseBasicsTwo" aria-expanded="false" aria-controls="collapseBasicsTwo">
+                    <a class="accordion-button text-body collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseBasicsTwo" aria-expanded="false" aria-controls="collapseBasicsTwo">
                       ¿Hay facilidades de pago o créditos para personas jurídicas/empresas?
                     </a>
                   </div>
@@ -580,7 +580,7 @@
                 <!-- Accordion Item -->
                 <div class="accordion-item px-5" data-aos="fade-up" data-aos-delay="300">
                   <div class="accordion-header" id="headingBasicsThree">
-                    <a class="accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseBasicsThree" aria-expanded="false" aria-controls="collapseBasicsThree">
+                    <a class="accordion-button text-body collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseBasicsThree" aria-expanded="false" aria-controls="collapseBasicsThree">
                       ¿Cuál es la diferencia entre interpretación simultánea y consecutiva?
                     </a>
                   </div>
@@ -689,7 +689,7 @@
             <div class="step-content-wrapper">
               <span class="step-icon step-icon-soft-primary">1</span>
               <div class="step-content">
-                <h4 class="step-title">Solicite una cotización gratis</h4>
+                <h4 class="step-title text-body">Solicite una cotización gratis</h4>
                 <p class="text-justify">Solicite una cotización personalizada sin compromisos desde el formulario de contacto o envíe sus requerimientos a ventas@limac.com.pe y recibirá una cotización en un plazo de 24 horas útiles.</p>
               </div>
             </div>
@@ -698,7 +698,7 @@
             <div class="step-content-wrapper">
               <span class="step-icon step-icon-soft-primary">2</span>
               <div class="step-content">
-                <h4 class="step-title">Aprobación de la cotización</h4>
+                <h4 class="step-title text-body">Aprobación de la cotización</h4>
                 <p>Si realiza su pago a través de un depósito o transferencia bancaria, envíe su voucher a ventas@limac.com.pe. Las empresas que tienen un contrato con nosotros o empresas públicas deben emitir la orden de compra correspondiente.</p>
               </div>
             </div>
@@ -707,7 +707,7 @@
             <div class="step-content-wrapper">
               <span class="step-icon step-icon-soft-primary">3</span>
               <div class="step-content">
-                <h4 class="step-title">Reserva y coordinación de instalaciones</h4>
+                <h4 class="step-title text-body">Reserva y coordinación de instalaciones</h4>
                 <p>En un plazo no mayor a 24 horas útiles nos pondremos en contacto con usted para coordinar la instalación de las cabinas y ultimar detalles como los datos de contacto, el punto de encuentro con los intérpretes y la revisión del material que se usará en el evento.</p>
               </div>
             </div>
@@ -1186,6 +1186,35 @@
         duration: 650,
         once: true
       });
+
+    //menu-espaciado 
+        document.addEventListener("DOMContentLoaded", function () {
+        const menu = document.getElementById("miMenu");
+        
+        // Verifica si la pantalla es >= 992px
+        if (window.matchMedia("(min-width: 992px)").matches) {
+          if (menu.classList.contains("mt-n4")) {
+            menu.classList.remove("mt-n4");
+            menu.classList.add("mt-n2");
+          }
+        }
+      
+        // Si quieres que también responda al redimensionamiento:
+        window.addEventListener("resize", function () {
+          if (window.matchMedia("(max-width: 992px)").matches) {
+            if (menu.classList.contains("mt-n4")) {
+              menu.classList.remove("mt-n4");
+              menu.classList.add("mt-n2");
+            }
+          } else {
+            // Vuelve a mt-n4 si el ancho baja de 992px
+            if (menu.classList.contains("mt-n2")) {
+              menu.classList.remove("mt-n2");
+              menu.classList.add("mt-n4");
+            }
+          }
+        });
+      }); 
 
 
       // INITIALIZATION OF SWIPER
