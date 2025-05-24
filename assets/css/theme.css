@@ -213,7 +213,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-bottom: 0.5rem;
   font-weight: 600;
   line-height: 1.2;
-  color: var(--bs-body-color);
+  color: var(--bs-heading-color);
 }
 
 h1, .h1 {
@@ -27090,13 +27090,6 @@ body.index-page .navbar .nav-link {
 [id^=Sol],
 [id^=Dom],
 [id^=Legis] {
-  scroll-margin-top: 250px !important;
-}
-
-h4[id], [id].h4 {
-  scroll-margin-top: 120px;
-}
-
-.js-scrollspy [id] {
-  scroll-margin-top: 120px;
+  scroll-margin-top: 150px !important;
+  margin-bottom: 80px !important;
 }
