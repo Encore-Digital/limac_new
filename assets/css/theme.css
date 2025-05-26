@@ -27077,6 +27077,9 @@ body.index-page .navbar .nav-link {
     color: #377dff !important;
   }
 }
+
+
+/* Aplica a todas tus secciones de ancla */
 [id^=Reg],
 [id^=Ident],
 [id^=Cliente],
@@ -27090,6 +27093,38 @@ body.index-page .navbar .nav-link {
 [id^=Sol],
 [id^=Dom],
 [id^=Legis] {
-  scroll-margin-top: 150px !important;
-  margin-bottom: 80px !important;
+  scroll-margin-top: 100px !important; /* igual que tu offset ScrollSpy */
+  min-height: 110px;                  /* asegura suficiente área de detección */
+  margin-bottom: 32px !important;     /* espacio discreto entre secciones */
+  position: relative;                 /* para el pseudo-elemento si hace falta */
+}
+
+/* OPCIONAL: Pseudo-elemento para reforzar el área de anclaje en secciones MUY cortas */
+[id^=Reg]::before,
+[id^=Ident]::before,
+[id^=Cliente]::before,
+[id^=Func]::before,
+[id^=Pagos]::before,
+[id^=Derechos]::before,
+[id^=DerechosCli]::before,
+[id^=Gar]::before,
+[id^=ResCont]::before,
+[id^=Confi]::before,
+[id^=Sol]::before,
+[id^=Dom]::before,
+[id^=Legis]::before {
+  content: '';
+  display: block;
+  height: 80px;        /* O ajusta a 70px o 80px si sigues viendo saltos */
+  margin-top: -60px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (min-width: 992px) {
+  .sidebar-sticky {
+    position: sticky;
+    top: 120px;  /* Ajusta según la altura de tu header */
+    z-index: 1020;
+  }
 }
