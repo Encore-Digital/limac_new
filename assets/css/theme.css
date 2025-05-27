@@ -27098,8 +27098,6 @@ body.index-page .navbar .nav-link {
 [id^=Dom],
 [id^=Legis] {
   scroll-margin-top: 100px !important; /* igual que tu offset ScrollSpy */
-  min-height: 110px;                  /* asegura suficiente área de detección */
-  margin-bottom: 32px !important;     /* espacio discreto entre secciones */
   position: relative;                 /* para el pseudo-elemento si hace falta */
 }
 
