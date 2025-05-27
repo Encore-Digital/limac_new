@@ -27132,3 +27132,8 @@ body.index-page .navbar .nav-link {
     z-index: 1020;
   }
 }
+
+#header   {
+  z-index: 1080 !important; /* 1050 es el default de .dropdown-menu de Bootstrap, sube un poco más */
+}
+
