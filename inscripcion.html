@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Contacto | LIMAC</title>
+  <title>Inscripción | LIMAC</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="./favicon.png">
@@ -35,7 +35,7 @@
       <nav class="js-mega-menu navbar-nav-wrap">
         <!-- Default Logo -->
         <a class="navbar-brand" href="./index.html" aria-label="Front">
-          <p class="logo_create logo_white">limac<sub class="sb">®</sub></p>
+          <p class="logo_create logo_white">limac</p>
         </a>
         <!-- End Default Logo -->
 
@@ -282,271 +282,303 @@
   <main id="content" role="main">
     <div class="bg-primary content-space-t-2 position-relative">
       <div class="container content-space-t-1 position-relative z-2 mt-2">
-        <div class="row justify-content-lg-between mb-5">
-          <div class="col-lg-5 content-space-t-2 content-space-t-lg-3 mb-7 mb-lg-0">
-            <!-- Heading -->
-            <div class="mt-5 mb-7">
-              <h2 class="h1 text-white">Comuníquese con nosotros</h2>
-              <p class="text-white-70">Llene el formulario y nos pondremos en contácto o comuníquese al:</p>
-            </div>
-            <!-- End Heading -->
+        <div class="row justify-content-lg-between mb-10">
+          <div class="col-lg-12 mt-10 mb-10">
+            <div class="container py-5 ">
+              <div class="wizard-card card shadow border-0 rounded-4 p-4">
+                <h2 class="mb-4 text-primary text-center">Bolsa de Trabajo</h2>
+                <!-- Barra de progreso -->
+                <div class="wizard-progress d-flex justify-content-center mb-4 gap-4">
+                  <ul class="step step-md step-centered wizard-progress mb-4">
+                    <li class="step-item" id="step-item-1">
+                      <div class="step-content-wrapper">
+                        <span class="step-icon step-icon-soft-primary" id="step-icon-1">1</span>
+                        <div class="step-title">Registro</div>
+                      </div>
+                    </li>
+                    <li class="step-item" id="step-item-2">
+                      <div class="step-content-wrapper">
+                        <span class="step-icon step-icon-soft-primary" id="step-icon-2">2</span>
+                        <div class="step-title">Estudios</div>
+                      </div>
+                    </li>
+                    <li class="step-item" id="step-item-3">
+                      <div class="step-content-wrapper">
+                        <span class="step-icon step-icon-soft-primary" id="step-icon-3">3</span>
+                        <div class="step-title">Detalle</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card zi-2">
+                  <div class="card-body">
+                    <form id="multiStepForm" autocomplete="off">
+                      <!-- Paso 1: Datos personales -->
+                      <!-- Paso 1: Información Personal + Idiomas -->
+                      <div class="wizard-step" id="step1">
+                        <div class="mb-4">
+                          <h3 class="text-center">Información Personal</h3>
+                        </div>
+                        <div class="row g-3 mb-4">
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="nombre" placeholder="Nombre*" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="direccion" placeholder="Dirección*" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="apellidos" placeholder="Apellidos*" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="distrito" placeholder="Distrito*" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="email" class="form-control" name="correo" placeholder="Correo Electrónico*" required>
+                          </div>
+                          <div class="col-md-6">
+                            <select class="form-select" name="discapacidad" required>
+                              <option value="">¿Posee alguna discapacidad?*</option>
+                              <option value="No">No</option>
+                              <option value="Sí">Sí</option>
+                            </select>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="telefono" placeholder="Teléfono*" required>
+                          </div>
+                          <div class="col-md-6">
+                            <textarea class="form-control" name="detalle_discapacidad" rows="1" placeholder="De ser afirmativo, indique su discapacidad"></textarea>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="celular" placeholder="Celular*" required>
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="mb-4">
+                          <h3 class="text-center">Idiomas</h3>
+                        </div>
+                        <div class="row g-3 mb-4">
+                          <!-- Idioma 1 -->
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="idioma_1" placeholder="Idioma 01*">
+                          </div>
+                          <div class="col-md-6">
+                            <select class="form-select" name="fluidez_1" required>
+                              <option value="">Nivel de Fluidez*</option>
+                              <option>Básico</option>
+                              <option>Intermedio</option>
+                              <option>Avanzado</option>
+                            </select>
+                          </div>
+                          <!-- Idioma 2 -->
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="idioma_2" placeholder="Idioma 02">
+                          </div>
+                          <div class="col-md-6">
+                            <select class="form-select" name="fluidez_2">
+                              <option value="">Nivel de Fluidez</option>
+                              <option>Básico</option>
+                              <option>Intermedio</option>
+                              <option>Avanzado</option>                              
+                            </select>
+                          </div>
+                          <!-- Idioma 3 -->
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="idioma_3" placeholder="Idioma 03">
+                          </div>
+                          <div class="col-md-6">
+                            <select class="form-select" name="fluidez_3">
+                              <option value="">Nivel de Fluidez</option>
+                              <option>Básico</option>
+                              <option>Intermedio</option>
+                              <option>Avanzado</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                          <button type="button" class="btn btn-primary" onclick="nextStep()">Siguiente</button>
+                        </div>
+                      </div>
 
-            <div class="row">
-              <div class="col-sm-6 mb-5">
-                <span class="icon icon-soft-light icon-circle mb-3">
-                  <i class="bi-envelope-open-fill"></i>
-                </span>
-                <h4 class="text-white mb-0">Consultas generales</h4>
-                <a class="text-white-70 small" href="#">ventas@limac.com.pe</a>
+                      <!-- Paso 2: Estudios y Experiencia Laboral -->
+                      <div class="wizard-step" id="step2" style="display:none;">
+                        <div class="mb-4">
+                          <h3 class="text-center">Estudios</h3>
+                        </div>
+                        <div class="row g-3 mb-4">
+                          <!-- Institución 1 -->
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="institucion_1" placeholder="Institución*" required>
+                          </div>
+                          <!-- Institución 2 -->
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="institucion_2" placeholder="Institución*">
+                          </div>
+                          <!-- Fechas 1 -->
+                          <div class="col-md-3">
+                            <input type="text" class="form-control" name="desde_1" placeholder="Desde (Mes-Añ)*" required>
+                          </div>
+                          <div class="col-md-3">
+                            <input type="text" class="form-control" name="hasta_1" placeholder="Hasta (Mes-Añ)">
+                          </div>
+                          <!-- Fechas 2 -->
+                          <div class="col-md-3">
+                            <input type="text" class="form-control" name="desde_2" placeholder="Desde (Mes-Añ)">
+                          </div>
+                          <div class="col-md-3">
+                            <input type="text" class="form-control" name="hasta_2" placeholder="Hasta (Mes-Añ)">
+                          </div>
+                          <!-- Nivel alcanzado 1 -->
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="nivel_1" placeholder="Nivel alcanzado*" required>
+                          </div>
+                          <!-- Nivel alcanzado 2 -->
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="nivel_2" placeholder="Nivel alcanzado*">
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="mb-4">
+                          <h3 class="text-center">Experiencia Laboral</h3>
+                        </div>
+                        <div class="row g-3 mb-4">
+                          <!-- Empresa 1 -->
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="empresa_1" placeholder="Empresa*" required>
+                          </div>
+                          <!-- Empresa 2 (opcional) -->
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="empresa_2" placeholder="Empresa (opcional)">
+                          </div>
+                          <!-- Cargo 1 -->
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="cargo_1" placeholder="Cargo*" required>
+                          </div>
+                          <!-- Cargo 2 (opcional) -->
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="cargo_2" placeholder="Cargo (opcional)">
+                          </div>
+                          <!-- Desde/Hasta Mes/Año 1 -->
+                          <div class="col-md-3">
+                            <input type="text" class="form-control" name="desde_mes_1" placeholder="Desde (Mes)*" required>
+                          </div>
+                          <div class="col-md-3">
+                            <input type="text" class="form-control" name="desde_anio_1" placeholder="Desde (Año)*" required>
+                          </div>
+                          <div class="col-md-3">
+                            <input type="text" class="form-control" name="hasta_mes_1" placeholder="Hasta (Mes)">
+                          </div>
+                          <div class="col-md-3">
+                            <input type="text" class="form-control" name="hasta_anio_1" placeholder="Hasta (Año)">
+                          </div>
+                          <!-- Desde/Hasta Mes/Año 2 (opcional) -->
+                          <div class="col-md-3">
+                            <input type="text" class="form-control" name="desde_mes_2" placeholder="Desde (Mes)">
+                          </div>
+                          <div class="col-md-3">
+                            <input type="text" class="form-control" name="desde_anio_2" placeholder="Desde (Año)">
+                          </div>
+                          <div class="col-md-3">
+                            <input type="text" class="form-control" name="hasta_mes_2" placeholder="Hasta (Mes)">
+                          </div>
+                          <div class="col-md-3">
+                            <input type="text" class="form-control" name="hasta_anio_2" placeholder="Hasta (Año)">
+                          </div>
+                          <!-- Funciones en el cargo 1 -->
+                          <div class="col-md-6">
+                            <textarea class="form-control" name="funciones_1" rows="2" placeholder="¿Cuáles fueron sus funciones en el cargo?*" required></textarea>
+                          </div>
+                          <!-- Funciones en el cargo 2 (opcional) -->
+                          <div class="col-md-6">
+                            <textarea class="form-control" name="funciones_2" rows="2" placeholder="¿Cuáles fueron sus funciones en el cargo? (opcional)"></textarea>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <button type="button" class="btn btn-outline-primary" onclick="prevStep()">Anterior</button>
+                          <button type="button" class="btn btn-primary" onclick="nextStep()">Siguiente</button>
+                        </div>
+                      </div>
+
+                      <!-- Paso 3: Detalles -->
+                      <div class="wizard-step" id="step3" style="display:none;">
+                        <div class="mb-4">
+                          <h3 class="text-center">Puesto a postular</h3>
+                        </div>
+                        <div class="row justify-content-center mb-3">
+                          <div class="col-auto">
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="puesto[]" value="Traductor" id="puesto-traductor">
+                              <label class="form-check-label" for="puesto-traductor">Traductor</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="puesto[]" value="Intérprete" id="puesto-interprete">
+                              <label class="form-check-label" for="puesto-interprete">Intérprete</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="puesto[]" value="Docente" id="puesto-docente">
+                              <label class="form-check-label" for="puesto-docente">Docente</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mb-4">
+                          <h3 class="text-center">Disponibilidad de trabajo</h3>
+                        </div>
+                        <div class="row justify-content-center mb-3">
+                          <div class="col-auto">
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="turno[]" value="1er Turno" id="turno-1">
+                              <label class="form-check-label" for="turno-1">1er. Turno (8:00 am - 6:00 pm)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="turno[]" value="2do Turno" id="turno-2">
+                              <label class="form-check-label" for="turno-2">2do. Turno (2:00 pm - 12:00 am)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="turno[]" value="3er Turno" id="turno-3">
+                              <label class="form-check-label" for="turno-3">3er. Turno (10:00 pm - 08:00 am)</label>
+                            </div>
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="row mb-4">
+                          <!-- Radios ocupan toda la fila arriba -->
+                          <div class="col-12 mb-2">
+                            <label class="form-label mb-1">¿Es Ud. un Traductor Profesional?</label>
+                            <div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="traductor_profesional" id="traductor-si" value="Sí">
+                                <label class="form-check-label" for="traductor-si">Sí</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="traductor_profesional" id="traductor-no" value="No">
+                                <label class="form-check-label" for="traductor-no">No</label>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Ahora dos columnas iguales para los textareas -->
+                          <div class="col-md-6">
+                            <textarea class="form-control mb-3" name="estudios_traductor" rows="2" placeholder="Háblenos un poco acerca de sus estudios como traductor"></textarea>
+                            <textarea class="form-control" name="info_adicional_traductor" rows="2" placeholder="Información adicional acerca de Ud."></textarea>
+                          </div>
+                          <div class="col-md-6">
+                            <textarea class="form-control mb-3" name="diferencia_traductor" rows="2" placeholder="¿Qué le diferencia de otros traductores?*"></textarea>
+                            <textarea class="form-control" name="cualidades_defectos" rows="2" placeholder="¿Cuáles son sus cualidades y defectos?"></textarea>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Adjunte su CV: (*)</label>
+                          <input type="file" class="form-control" name="cv" accept=".pdf,.doc,.docx" required>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <button type="button" class="btn btn-outline-primary" onclick="prevStep()">Anterior</button>
+                          <button type="submit" class="btn btn-success">Enviar</button>
+                        </div>
+                      </div>
+
+                    </form>
+                    </div>        
+                </div>
               </div>
-              <!-- End Col -->
-
-              <div class="col-sm-6 mb-5">
-                <span class="icon icon-soft-light icon-circle mb-3">
-                  <i class="bi-telephone-inbound-fill"></i>
-                </span>
-                <h4 class="text-white mb-0">Número</h4>
-                <a class="text-white-70 small" href="#">(01) 700 9040</a>
-              </div>
-              <!-- End Col -->
-
-              <div class="col-sm-6">
-                <span class="icon icon-soft-light icon-circle mb-3">
-                  <i class="bi-geo-alt-fill"></i>
-                </span>
-                <h4 class="text-white mb-0">Dirección</h4>
-                <a class="text-white-70 small" href="#">Calle German Schreiber 210 Oficina 302, San Isidro</a>
-              </div>
-              <!-- End Col -->
-              <div class="col-sm-6">
-                <span class="icon icon-soft-light icon-circle mb-3">
-                  <i class="bi bi-clock-history"></i>
-                </span>
-                <h4 class="text-white mb-0">Horarió de Atención</h4>
-                <a class="text-white-70 small" href="#">Lunes a Viernes de 08:00 a 18:00<br>Sábados de 08:00 a 13:00</a>
-              </div>
-              <!-- End Col -->
-            </div>
-            <!-- End Row -->
-          </div>
-
-          <div class="col-lg-6 mt-10 mb-5">
-            <!-- Card -->
-            <div class="card zi-2">
-              <div class="card-body">
-
-                <!-- Form -->
-                <form>
-                  <div class="mb-4">
-                    <h3>Datos del servicio</h3>
-                  </div>
-                  <!-- Servicio -->
-                  <!-- Servicio -->
-                  <div class="mb-3">
-                    <label class="form-label visually-hidden" for="selectServicio">Servicio</label>
-                    <select id="selectServicio" class="form-select form-select-lg" name="servicio">
-                      <option value="" selected disabled>Seleccione un servicio</option>
-                      <option value="Traducción">Traducción</option>
-                      <option value="Interpretación">Interpretación</option>
-                    </select>
-                  </div>
-
-                  <!-- =================== CAMPOS PARA TRADUCCIÓN =================== -->
-                  <div id="camposTraduccion" style="display: none;">
-
-                    <!-- Tipo de entrega -->
-                    <div class="mb-3">
-                      <label class="form-label visually-hidden" for="selectEntrega">Tipo de entrega</label>
-                      <select id="selectEntrega" class="form-select form-select-lg" name="tipo_entrega">
-                        <option value="" selected disabled>Seleccione el tipo de entrega</option>
-                        <option value="MS Word - versión digital">MS Word - versión digital</option>
-                        <option value="Certificada - versión digital">Certificada - versión digital</option>
-                        <option value="Certificada - versión impresa">Certificada - versión impresa</option>
-                        <option value="Oficial - versión impresa">Oficial - versión impresa</option>
-                      </select>
-                    </div>
-
-                    <!-- Idioma de origen -->
-                    <div class="mb-3">
-                      <label class="form-label visually-hidden" for="idiomaOrigen">Idioma de origen</label>
-                      <select id="idiomaOrigen" class="form-select form-select-lg" name="idioma_origen">
-                        <option value="" selected disabled>Idioma de origen</option>
-                        <option value="Español (Perú)">Español (Perú)</option>
-                        <option value="Español (España)">Español (España)</option>
-                        <option value="Inglés (EE.UU.)">Inglés (EE.UU.)</option>
-                        <option value="Inglés (Reino Unido)">Inglés (Reino Unido)</option>
-                        <option value="Francés (Francia)">Francés (Francia)</option>
-                        <option value="Francés (Canadá)">Francés (Canadá)</option>
-                        <option value="Alemán (Alemania)">Alemán (Alemania)</option>
-                        <option value="Italiano (Italia)">Italiano (Italia)</option>
-                        <option value="Portugués (Brasil)">Portugués (Brasil)</option>
-                        <option value="Portugués (Portugal)">Portugués (Portugal)</option>
-                        <option value="Quechua (Perú)">Quechua (Perú)</option>
-                      </select>
-                    </div>
-
-                    <!-- Idioma de destino -->
-                    <div class="mb-3">
-                      <label class="form-label visually-hidden" for="idiomaDestino">Idioma de destino</label>
-                      <select id="idiomaDestino" class="form-select form-select-lg" name="idioma_destino">
-                        <option value="" selected disabled>Idioma de destino</option>
-                        <option value="Español (Perú)">Español (Perú)</option>
-                        <option value="Español (España)">Español (España)</option>
-                        <option value="Inglés (EE.UU.)">Inglés (EE.UU.)</option>
-                        <option value="Inglés (Reino Unido)">Inglés (Reino Unido)</option>
-                        <option value="Francés (Francia)">Francés (Francia)</option>
-                        <option value="Francés (Canadá)">Francés (Canadá)</option>
-                        <option value="Alemán (Alemania)">Alemán (Alemania)</option>
-                        <option value="Italiano (Italia)">Italiano (Italia)</option>
-                        <option value="Portugués (Brasil)">Portugués (Brasil)</option>
-                        <option value="Portugués (Portugal)">Portugués (Portugal)</option>
-                        <option value="Quechua (Perú)">Quechua (Perú)</option>
-                      </select>
-                    </div>
-
-                    <div class="mb-3">
-                      <label class="form-label" for="archivo">Adjuntar archivo</label>
-                      <input class="form-control" type="file" id="archivo" name="archivo">
-                    </div>
-
-                  </div>
-
-                  <!-- =================== CAMPOS PARA INTERPRETACIÓN =================== -->
-                  <div id="camposInterpretacion" style="display: none;">
-
-                    <!--Evento Nombre -->
-                    <div class="mb-3">
-                      <input type="text" class="form-control form-control-lg" name="hireUsFormNameLastName" id="hireUsFormLasttName" placeholder="¿Cuál es el nombre de su evento?">
-                    </div>
-
-                    <!-- IDIOMA DE ORIGEN -->
-                    <div class="mb-3">
-                      <select id="idiomaDestino" class="form-select form-select-lg" name="idioma_destino">
-                        <option value="" selected disabled>Idioma de origen: Inglés, Español, Francés... </option>
-                        <option value="Español (Perú)">Español</option>
-                        <option value="Inglés (EE.UU.)">Inglés</option>
-                        <option value="Francés (Francia)">Francés</option>
-                        <option value="Alemán (Alemania)">Alemán</option>
-                        <option value="Italiano (Italia)">Italiano</option>
-                        <option value="Portugués (Brasil)">Portugués</option>
-                        <option value="Quechua (Perú)">Japones</option>
-                        <option value="Quechua (Perú)">Quechua (Perú)</option>
-                      </select>
-                    </div>
-
-                    <!-- IDIOMA DESTINO -->
-                    <div class="mb-3">
-                      <select id="idiomaDestino" class="form-select form-select-lg" name="idioma_destino">
-                        <option value="" selected disabled>Idioma de destino: Inglés, Español, Francés... </option>
-                        <option value="Español (Perú)">Español</option>
-                        <option value="Inglés (EE.UU.)">Inglés</option>
-                        <option value="Francés (Francia)">Francés</option>
-                        <option value="Alemán (Alemania)">Alemán</option>
-                        <option value="Italiano (Italia)">Italiano</option>
-                        <option value="Portugués (Brasil)">Portugués</option>
-                        <option value="Quechua (Perú)">Japones</option>
-                        <option value="Quechua (Perú)">Quechua (Perú)</option>
-                      </select>
-                    </div>
-
-                    <div class="row">
-                      <!-- Fecha del evento -->
-                      <div class="col-md-6 mb-3">
-                        <label class="form-label" for="hireUsFormDetails">Fecha de Inicio</label>
-                        <input type="date" class="form-control form-control-lg" name="fecha_evento" id="fechaEvento" placeholder="Fecha del evento">
-                      </div>
-
-                      <!-- Hora del evento-->
-                      <div class="col-md-6 mb-3">
-                        <label class="form-label" for="hireUsFormDetails">Hora de Inicio</label>
-                        <input type="time" class="form-control form-control-lg" name="hora_evento" id="horaEvento" placeholder="Seleccione una hora">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <!-- Fecha del evento -->
-                      <div class="col-md-6 mb-3">
-                        <label class="form-label" for="hireUsFormDetails">Fecha de Fin</label>
-                        <input type="date" class="form-control form-control-lg" name="fecha_evento" id="fechaEvento" placeholder="Fecha del evento">
-                      </div>
-
-                      <!-- Hora del evento-->
-                      <div class="col-md-6 mb-3">
-                        <label class="form-label" for="hireUsFormDetails">Fecha de Término</label>
-                        <input type="time" class="form-control form-control-lg" name="hora_evento" id="horaEvento" placeholder="Seleccione una hora">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <!-- Lugar -->
-                      <div class="col-md-6 mb-3">
-                        <label class="form-label" for="hireUsFormDetails">Lugar de Evento</label>
-                        <input type="text" class="form-control form-control-lg" name="lugar" placeholder="">
-                      </div>
-
-                      <!-- Equipos-->
-                      <div class="col-md-6 mb-3">
-                        <label class="form-label" for="hireUsFormDetails">¿Necesita Equipos?</label>
-                        <select id="idiomaDestino" class="form-select" name="idioma_destino">
-                          <option value="" selected disabled></option>
-                          <option value="Sí">Si</option>
-                          <option value="No">No</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div class="mb-3">
-                      <input type="text" class="form-control form-control-lg" name="lugar" placeholder="Cantidad de Asistentes">
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label" for="archivo">Adjuntar archivo</label>
-                      <input class="form-control" type="file" id="archivo" name="archivo">
-                    </div>
-                  </div>
-
-                  <!-- =================== CAMPOS DE INFORMACIÓN =================== -->
-                  <div class="mb-4">
-                    <h3>Su información</h3>
-                  </div>
-                  <!-- Nombre -->
-                  <div class="mb-3">
-                    <input type="text" class="form-control form-control-lg" name="nombre" placeholder="Nombre / Razón social">
-                  </div>
-
-                  <!-- Correo -->
-                  <div class="mb-3">
-                    <input type="email" class="form-control form-control-lg" name="correo" placeholder="Correo Electrónico">
-                  </div>
-
-                  <!-- Teléfono -->
-                  <div class="mb-3">
-                    <input type="text" class="form-control form-control-lg" name="telefono" placeholder="Teléfono">
-                  </div>
-
-                  <!-- DNI / RUC -->
-                  <div class="mb-3">
-                    <input type="text" class="form-control form-control-lg" name="documento" placeholder="DNI / RUC">
-                  </div>
-
-                  <div class="mb-4">
-                    <h3>Consulta</h3>
-                  </div>
-
-                  <!-- Consulta -->
-                  <div class="mb-3">
-                    <textarea class="form-control form-control-lg" name="mensaje" placeholder="Escríbanos su consulta" rows="4"></textarea>
-                  </div>
-
-                  <!-- Botón -->
-                  <div class="d-grid mb-2">
-                    <button type="submit" class="btn btn-primary btn-lg">Enviar solicitud</button>
-                  </div>
-                  <p>Al enviar este formulario, acepta la <a href="politica-de-privacidad.html">política de privacidad</a> y los <a href="terminos-y-condiciones.html">términos</a> de este sitio web.</p>
-                </form>
-                <!-- End Form -->
-              </div>
-            </div>
-            <!-- End Card -->
+            </div>  
           </div>
         </div>
 
@@ -690,6 +722,7 @@
   <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- JS Implementing Plugins -->
+  <script src="./assets/js/wizard-form.js"></script>
   <script src="./assets/vendor/hs-header/dist/hs-header.min.js"></script>
   <script src="./assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
   <script src="./assets/vendor/hs-show-animation/dist/hs-show-animation.min.js"></script>
@@ -825,7 +858,7 @@
           }
         });
       }); 
-
+      
 
       // Clients
       var swiper = new Swiper('.js-swiper-clients',{

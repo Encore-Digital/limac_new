@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Términos y Condiciones | LIMAC</title>
+  <title>Libro de Reclamaciones | LIMAC</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="./favicon.png">
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 
   <!-- CSS Implementing Plugins -->
   <link rel="stylesheet" href="./assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
@@ -32,7 +32,7 @@
       <nav class="js-mega-menu navbar-nav-wrap">
         <!-- Default Logo -->
         <a class="navbar-brand" href="./index.html" aria-label="Front">
-          <p class="logo_create">limac</p>
+           <p class="logo_create">limac<sub class="sb">®</sub></p>
         </a>
         <!-- End Default Logo -->
 
@@ -307,80 +307,86 @@
     <div class="container content-space-1 content-space-md-3">
       <div class="row">
         <div class="col-md-12 col-lg-12 px-10">
-          <div class="mb-2 mt-2 text-center">
+          <div class="mb-4 mt-2 text-center">
             <h3>Conforme a lo establecido en el código de la Protección y Defensa del consumidor contamos con un Libro de Reclamaciones a su disposición. Ingrese una queja o reclamo aquí.</h3>
           </div>
 
                 <!-- Form -->
                 <form>
                   <!-- =================== CAMPOS DE INFORMACIÓN =================== -->
-                  <div class="mb-4">
+                  <div class="my-4">
                     <h3>1. Identificación del consumidor reclamante</h3>
                   </div>
                   <!-- Nombre -->
-                  <div class="mb-3">
+                  <div class="mb-4">
                     <input type="text" class="form-control form-control-lg" name="nombre" placeholder="Nombre / Razón social">
                   </div>
 
                   <!-- Correo -->
-                  <div class="mb-3">
+                  <div class="mb-4">
                     <input type="email" class="form-control form-control-lg" name="correo" placeholder="Correo Electrónico">
                   </div>
 
                   <!-- Dirección -->
-                  <div class="mb-3">
+                  <div class="mb-4">
                     <input type="text" class="form-control form-control-lg" name="direccion" placeholder="Dirección">
                   </div>
 
                   <!-- Distrito -->
-                  <div class="mb-3">
+                  <div class="mb-4">
                     <input type="text" class="form-control form-control-lg" name="distrito" placeholder="Distrito">
                   </div>
 
                   <!-- Teléfono -->
-                  <div class="mb-3">
+                  <div class="mb-4">
                     <input type="text" class="form-control form-control-lg" name="telefono" placeholder="Teléfono">
                   </div>
 
                   <!-- DNI / RUC -->
-                  <div class="mb-3">
+                  <div class="mb-4">
                     <input type="text" class="form-control form-control-lg" name="documento" placeholder="DNI / RUC">
                   </div>
 
-                  <div class="mb-4">
+                  <div class="my-4">
                     <h3>2. Identificación del bien contratado</h3>
                   </div>
 
                   <!--  -->
-                  <div class="mb-3">
-                    <input name="Producto" value="Si" type="checkbox" id="Producto" class="graphic" checked="">
-                    <label for="Producto" data-translate="label_product" id="label_product"><span class="flag"></span>Producto</label>
-                    <input name="Servicio" value="Si" type="checkbox" id="Servicio" class="graphic">
-                    <label for="Servicio" data-translate="label_service" id="label_service"><span class="flag"></span>Servicio</label>
+                  <div class="mb-4">
+                    <div class="my-3">
+                      <input name="Producto" value="Si" type="checkbox" id="Producto" class="graphic" checked="">
+                      <label for="Producto" data-translate="label_product" id="label_product"><span class="flag"></span>Producto</label>
+                      <input name="Servicio" value="Si" type="checkbox" id="Servicio" class="graphic">
+                      <label for="Servicio" data-translate="label_service" id="label_service"><span class="flag"></span>Servicio</label>
+                    </div>
                     <textarea class="form-control form-control-lg" name="mensaje" placeholder="Mensaje" rows="4"></textarea>
                   </div>
 
-                  <div class="mb-4">
+                  <div class="my-4">
                     <h3>3. Detalle de la reclamación</h3>
                   </div>
 
                   <!--  -->
-                  <div class="mb-3">
-                    <input name="Reclamo" value="Si" type="checkbox" id="Reclamo" class="graphic" checked="">
-                    <label for="Reclamo" data-translate="label_reclamo" id="label_reclamo"><span class="flag"></span>Reclamo</label>
-                    <input name="Queja" value="Si" type="checkbox" id="Queja" class="graphic">
-                    <label for="Queja" data-translate="label_queja" id="label_queja"><span class="flag"></span>Queja</label>
+                  <div class="mb-4">
+                    <div class="my-3">
+                      <input name="Reclamo" value="Si" type="checkbox" id="Reclamo" class="graphic" checked="">
+                      <label for="Reclamo" data-translate="label_reclamo" id="label_reclamo"><span class="flag"></span>Reclamo</label>
+                      <input name="Queja" value="Si" type="checkbox" id="Queja" class="graphic">
+                      <label for="Queja" data-translate="label_queja" id="label_queja"><span class="flag"></span>Queja</label>
+                    </div>
                     <textarea class="form-control form-control-lg" name="detalle" placeholder="Detalle" rows="4"></textarea>
-                    <p>(1) RECLAMO: Disconformidad relacionada a los productos expendidos o servicios brindados.</p>
-                    <p>(2) QUEJA: Disconformidad NO RELACIONADA a los productos o servicios. Malestar o descontento respecto con la atención al público.</p>
+                    <div class="my-3">
+                      <p>(1) RECLAMO: Disconformidad relacionada a los productos expendidos o servicios brindados.</p>
+                      <p>(2) QUEJA: Disconformidad NO RELACIONADA a los productos o servicios. Malestar o descontento respecto con la atención al público.</p>
+                    </div>
                   </div>
                   
-                  <div class="mb-4">
+                  <div class="my-4">
                     <h3>4. Acciones Adoptadas por el Vendedor</h3>
                   </div>
 
                   <!--  -->
-                  <div class="mb-3">
+                  <div class="mb-4">
                     <textarea class="form-control form-control-lg" name="detalle2" placeholder="Detalle2" rows="4"></textarea>
                   </div>  
                   
@@ -410,7 +416,7 @@
           <!-- Logo -->
           <div class="mb-5">
             <a class="navbar-brand" href="./index.html" aria-label="Space">
-              <p class="logo_create">limac</p>
+               <p class="logo_create">limac<sub class="sb">®</sub></p>
             </a>
           </div>
           <!-- End Logo -->
@@ -521,7 +527,7 @@
 
       <!-- Copyright -->
       <div class="w-md-85 text-lg-center mx-lg-auto">
-        <p class="text-muted small">&copy; © 2025 Limac - Todos los derechos Reservados.</p>
+        <p class="text-muted small">&copy;   2025 Limac - Todos los derechos Reservados.</p>
       </div>
       <!-- End Copyright -->
     </div>

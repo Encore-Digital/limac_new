@@ -3272,10 +3272,10 @@ textarea.form-control-lg {
 }
 
 .btn-light {
-  --bs-btn-color: #000;
+  --bs-btn-color: #377dff;
   --bs-btn-bg: #f7faff;
   --bs-btn-border-color: #f7faff;
-  --bs-btn-hover-color: #000;
+  --bs-btn-hover-color: #377dff;
   --bs-btn-hover-bg: rgb(209.95, 212.5, 216.75);
   --bs-btn-hover-border-color: rgb(197.6, 200, 204);
   --bs-btn-focus-shadow-rgb: 210, 213, 217;
@@ -3283,7 +3283,7 @@ textarea.form-control-lg {
   --bs-btn-active-bg: rgb(197.6, 200, 204);
   --bs-btn-active-border-color: rgb(185.25, 187.5, 191.25);
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-color: #377dff;
   --bs-btn-disabled-bg: #f7faff;
   --bs-btn-disabled-border-color: #f7faff;
 }
@@ -27135,3 +27135,78 @@ body.index-page .navbar .nav-link {
   z-index: 1080 !important; /* 1050 es el default de .dropdown-menu de Bootstrap, sube un poco más */
 }
 
+.bg-primary.content-space-t-2 {
+  min-height: calc(100vh - 200px); 
+  display: flex;
+  align-items: center;
+}
+
+.wizard-card { background: #fff; }
+.wizard-progress { align-items: center; }
+.wizard-step-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e5e8ef;
+  color: #8898aa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background 0.2s, color 0.2s;
+  border: 2px solid #cfd8dc;
+}
+.wizard-step-circle.active, .wizard-step-circle.filled {
+  background: #0d6efd;
+  color: #fff;
+  border-color: #0d6efd;
+}
+.wizard-progress-line {
+  width: 48px;
+  height: 4px;
+  background: #e5e8ef;
+  margin: 0 8px;
+  border-radius: 2px;
+}
+.wizard-step-circle.filled {
+  background: #198754;
+  border-color: #198754;
+}
+
+.wizard-step-label {
+  font-size: 0.98rem;
+  color: #8898aa;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.5px;
+  min-width: 68px; /* O lo que necesites para alinear bien debajo del círculo */
+}
+
+.wizard-step-circle.active + .wizard-step-label,
+.wizard-step-circle.filled + .wizard-step-label {
+  color: #0d6efd; /* O tu azul institucional */
+  font-weight: 700;
+}
+
+.sb{
+    font-size: 0.35em;
+    bottom: -0.1em;
+    left: 0;
+    position: relative;
+    line-height: 0;
+    vertical-align: baseline;
+    text-shadow: none;
+    padding-left: 7%;
+}
+
+.step-item.active .step-icon {
+  background: #0d6efd !important;
+  color: #fff !important;
+  font-weight: bold;
+  border-color: #0d6efd;
+}
+.step-item.active .step-title {
+  color: #0d6efd !important;
+  font-weight: bold;
+}
