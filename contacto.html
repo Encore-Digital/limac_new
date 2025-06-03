@@ -380,8 +380,8 @@
                       <div class="mb-3">
                         <label class="form-label visually-hidden" for="selectServicio">Servicio</label>
                         <select id="selectServicio" class="form-select form-select-lg" name="servicio" required>
-                          <option value="" selected disabled>Seleccione un servicio</option>
-                          <option value="Traducción">Traducción</option>
+                          <option value=""disabled>Seleccione un servicio</option>
+                          <option value="Traducción" selected>Traducción</option>
                           <option value="Interpretación">Interpretación</option>
                         </select>
                       </div>
@@ -939,7 +939,7 @@
         document.querySelector('.js-nouislider').noUiSlider.set([this.target[0].text])
       }
     })
-      
+    
     })()
   </script>
 
@@ -949,11 +949,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const camposTraduccion = document.getElementById('camposTraduccion');
   const camposInterpretacion = document.getElementById('camposInterpretacion');
 
-  selectServicio.addEventListener('change', function () {
-    const valor = selectServicio.value;
-    camposTraduccion.style.display = (valor === 'Traducción') ? 'block' : 'none';
-    camposInterpretacion.style.display = (valor === 'Interpretación') ? 'block' : 'none';
-  });
+    if (selectServicio.value === 'Traducción') {
+        camposTraduccion.style.display = 'block';
+        camposInterpretacion.style.display = 'none';
+      } else if (selectServicio.value === 'Interpretación') {
+        camposTraduccion.style.display = 'none';
+        camposInterpretacion.style.display = 'block';
+      } else {
+        camposTraduccion.style.display = 'none';
+        camposInterpretacion.style.display = 'none';
+      }
 });
 </script>
 
