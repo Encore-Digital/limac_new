@@ -23,6 +23,7 @@
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="./assets/css/theme.css">
+  <link rel="stylesheet" href="./assets/vendor/nouislider/dist/nouislider.min.css">  
 </head>
 
 <body>
@@ -35,7 +36,7 @@
       <nav class="js-mega-menu navbar-nav-wrap">
         <!-- Default Logo -->
         <a class="navbar-brand" href="./index.html" aria-label="Front">
-          <p class="logo_create logo_white">limac</p>
+          <p class="logo_create logo_white">limac<sub class="sb">®</sub></p>
         </a>
         <!-- End Default Logo -->
 
@@ -288,34 +289,58 @@
               <div class="wizard-card card shadow border-0 rounded-4 p-4">
                 <h2 class="mb-4 text-primary text-center">Bolsa de Trabajo</h2>
                 <!-- Barra de progreso -->
-                <div class="wizard-progress d-flex justify-content-center mb-4 gap-4">
-                  <ul class="step step-md step-centered wizard-progress mb-4">
-                    <li class="step-item" id="step-item-1">
-                      <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-soft-primary" id="step-icon-1">1</span>
-                        <div class="step-title">Registro</div>
-                      </div>
-                    </li>
-                    <li class="step-item" id="step-item-2">
-                      <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-soft-primary" id="step-icon-2">2</span>
-                        <div class="step-title">Estudios</div>
-                      </div>
-                    </li>
-                    <li class="step-item" id="step-item-3">
-                      <div class="step-content-wrapper">
-                        <span class="step-icon step-icon-soft-primary" id="step-icon-3">3</span>
-                        <div class="step-title">Detalle</div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
                 <div class="card zi-2">
                   <div class="card-body">
-                    <form id="multiStepForm" autocomplete="off">
-                      <!-- Paso 1: Datos personales -->
-                      <!-- Paso 1: Información Personal + Idiomas -->
-                      <div class="wizard-step" id="step1">
+<!-- Step Form -->
+<form class="js-step-form"
+      data-hs-step-form-options='{
+        "progressSelector": "#basicStepFormProgress",
+        "stepsSelector": "#basicStepFormContent",
+        "endSelector": "#createProjectFinishBtn"
+      }'>
+  <!-- Step -->
+  <ul id="basicStepFormProgress" class="js-step-progress step step-sm step-icon-sm step-inline step-item-between mb-7">
+    <li class="step-item">
+      <a class="step-content-wrapper" href="javascript:;"
+         data-hs-step-form-next-options='{
+          "targetSelector": "#basicStepDetails"
+        }'>
+        <span class="step-icon step-icon-soft-dark">1</span>
+        <div class="step-content">
+          <span class="step-title">Registro</span>
+        </div>
+      </a>
+    </li>
+
+    <li class="step-item">
+      <a class="step-content-wrapper" href="javascript:;"
+         data-hs-step-form-next-options='{
+           "targetSelector": "#basicStepTerms"
+         }'>
+        <span class="step-icon step-icon-soft-dark">2</span>
+        <div class="step-content">
+          <span class="step-title">Estudios</span>
+        </div>
+      </a>
+    </li>
+
+    <li class="step-item">
+      <a class="step-content-wrapper" href="javascript:;"
+         data-hs-step-form-next-options='{
+           "targetSelector": "#basicStepMembers"
+         }'>
+        <span class="step-icon step-icon-soft-dark">3</span>
+        <div class="step-content">
+          <span class="step-title">Detalle</span>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <!-- End Step -->
+
+  <!-- Content Step Form -->
+  <div id="basicStepFormContent">
+    <div id="basicStepDetails" class="active">
                         <div class="mb-4">
                           <h3 class="text-center">Información Personal</h3>
                         </div>
@@ -394,14 +419,22 @@
                             </select>
                           </div>
                         </div>
-                        <div class="d-flex justify-content-end">
-                          <button type="button" class="btn btn-primary" onclick="nextStep()">Siguiente</button>
-                        </div>
-                      </div>
+      <!-- Footer -->
+      <div class="d-flex align-items-center">
+        <div class="ms-auto">
+          <button type="button" class="btn btn-primary"
+                  data-hs-step-form-next-options='{
+                    "targetSelector": "#basicStepTerms"
+                  }'>
+            Siguiente <i class="bi-chevron-right small"></i>
+          </button>
+        </div>
+      </div>
+      <!-- End Footer -->
+    </div>
 
-                      <!-- Paso 2: Estudios y Experiencia Laboral -->
-                      <div class="wizard-step" id="step2" style="display:none;">
-                        <div class="mb-4">
+    <div id="basicStepTerms" style="display: none;">
+                              <div class="mb-4">
                           <h3 class="text-center">Estudios</h3>
                         </div>
                         <div class="row g-3 mb-4">
@@ -492,30 +525,50 @@
                             <textarea class="form-control" name="funciones_2" rows="2" placeholder="¿Cuáles fueron sus funciones en el cargo? (opcional)"></textarea>
                           </div>
                         </div>
-                        <div class="d-flex justify-content-between">
-                          <button type="button" class="btn btn-outline-primary" onclick="prevStep()">Anterior</button>
-                          <button type="button" class="btn btn-primary" onclick="nextStep()">Siguiente</button>
-                        </div>
-                      </div>
+      <!-- Footer -->
+      <div class="d-flex align-items-center">
+        <button type="button" class="btn btn-ghost-secondary me-2"
+           data-hs-step-form-prev-options='{
+             "targetSelector": "#basicStepDetails"
+           }'>
+          <i class="bi-chevron-left small"></i> Anterior
+        </button>
 
-                      <!-- Paso 3: Detalles -->
-                      <div class="wizard-step" id="step3" style="display:none;">
+        <div class="ms-auto">
+          <button type="button" class="btn btn-primary"
+                  data-hs-step-form-next-options='{
+                    "targetSelector": "#basicStepMembers"
+                  }'>
+            Siguiente <i class="bi-chevron-right small"></i>
+          </button>
+        </div>
+      </div>
+      <!-- End Footer -->
+    </div>
+
+    <div id="basicStepMembers" style="display: none;">      
                         <div class="mb-4">
                           <h3 class="text-center">Puesto a postular</h3>
                         </div>
-                        <div class="row justify-content-center mb-3">
+                        <div class="row justify-content-center mb-3"> 
                           <div class="col-auto">
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="checkbox" name="puesto[]" value="Traductor" id="puesto-traductor">
-                              <label class="form-check-label" for="puesto-traductor">Traductor</label>
+                                      <label class="form-check form-switch" for="Traductor">
+                                        <input class="form-check-input mt-0" type="checkbox" id="Traductor">
+                                        <span class="">Traductor</span >
+                                      </label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="checkbox" name="puesto[]" value="Intérprete" id="puesto-interprete">
-                              <label class="form-check-label" for="puesto-interprete">Intérprete</label>
+                                      <label class="form-check form-switch" for="Intérprete"> 
+                                        <input class="form-check-input mt-0" type="checkbox" id="Intérprete">
+                                        <span class="">Intérprete</span >
+                                      </label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="checkbox" name="puesto[]" value="Docente" id="puesto-docente">
-                              <label class="form-check-label" for="puesto-docente">Docente</label>
+                                      <label class="form-check form-switch" for="Docente"> 
+                                        <input class="form-check-input mt-0" type="checkbox" id="Docente">
+                                        <span class="">Docente</span >
+                                      </label>
                             </div>
                           </div>
                         </div>
@@ -525,16 +578,22 @@
                         <div class="row justify-content-center mb-3">
                           <div class="col-auto">
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="checkbox" name="turno[]" value="1er Turno" id="turno-1">
-                              <label class="form-check-label" for="turno-1">1er. Turno (8:00 am - 6:00 pm)</label>
+                              <label class="form-check form-switch" for="1er Turno"> 
+                                <input class="form-check-input mt-0" type="checkbox" id="1er Turno">
+                                <span class="">1er. Turno(8:00 am - 6:00 pm)</span >
+                              </label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="checkbox" name="turno[]" value="2do Turno" id="turno-2">
-                              <label class="form-check-label" for="turno-2">2do. Turno (2:00 pm - 12:00 am)</label>
+                              <label class="form-check form-switch" for="2do Turno"> 
+                                <input class="form-check-input mt-0" type="checkbox" id="2do Turno">
+                                <span class="">2do. Turno(2:00 pm - 12:00 am)</span >
+                              </label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="checkbox" name="turno[]" value="3er Turno" id="turno-3">
-                              <label class="form-check-label" for="turno-3">3er. Turno (10:00 pm - 08:00 am)</label>
+                              <label class="form-check form-switch" for="3er Turno"> 
+                                <input class="form-check-input mt-0" type="checkbox" id="3er Turno">
+                                <span class="">3er. Turno(10:00 pm - 08:00 am)</span >
+                              </label>
                             </div>
                           </div>
                         </div>
@@ -544,13 +603,21 @@
                           <div class="col-12 mb-2">
                             <label class="form-label mb-1">¿Es Ud. un Traductor Profesional?</label>
                             <div>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="traductor_profesional" id="traductor-si" value="Sí">
-                                <label class="form-check-label" for="traductor-si">Sí</label>
-                              </div>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="traductor_profesional" id="traductor-no" value="No">
-                                <label class="form-check-label" for="traductor-no">No</label>
+                              <!-- Radio Button Group -->
+                              <div class="text-center mb-5">
+                                <div class="btn-group btn-group-segment btn-group-pills" role="group" aria-label="Pricing radio button group">
+                                  <input type="radio" class="js-switch-text btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                                  <label class="js-toggle-switch btn btn-sm" for="btnradio1">
+                                    Sí
+                                  </label>
+                                
+                                  <input type="radio" class="js-switch-text btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                                  <label class="js-toggle-switch btn btn-sm" for="btnradio2">
+                                    <span class="form-switch-promotion">
+                                      No
+                                    </span>
+                                  </label>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -568,13 +635,48 @@
                           <label class="form-label">Adjunte su CV: (*)</label>
                           <input type="file" class="form-control" name="cv" accept=".pdf,.doc,.docx" required>
                         </div>
-                        <div class="d-flex justify-content-between">
-                          <button type="button" class="btn btn-outline-primary" onclick="prevStep()">Anterior</button>
-                          <button type="submit" class="btn btn-success">Enviar</button>
-                        </div>
-                      </div>
+      <!-- Footer -->
+      <div class="d-sm-flex align-items-center">
+        <button type="button" class="btn btn-ghost-secondary mb-3 mb-sm-0 me-2"
+           data-hs-step-form-prev-options='{
+             "targetSelector": "#basicStepTerms"
+           }'>
+          <i class="bi-chevron-left small"></i> Anterior
+        </button>
 
-                    </form>
+        <div class="d-flex justify-content-end ms-auto">
+          <button type="button" class="btn btn-white me-2" data-dismiss="modal" aria-label="Close">Cancel</button>
+          <button id="createProjectFinishBtn" type="button" class="btn btn-primary">Enviar</button>
+        </div>
+      </div>
+      <!-- End Footer -->
+    </div>
+  </div>
+  <!-- End Content Step Form -->
+
+  <!-- Message Body -->
+  <div id="basicStepSuccessMessage" class="js-success-message" style="display:none;">
+    <div class="text-center">
+      <img class="img-fluid mb-3" src="../assets/svg/illustrations/oc-hi-five.svg" alt="Image Description" style="max-width: 15rem;">
+
+      <div class="mb-4">
+        <h2>Successful!</h2>
+        <p>New project has been successfully created.</p>
+      </div>
+
+      <div class="d-flex justify-content-center gap-3">
+        <a class="btn btn-white" href="#">
+          <i class="bi-chevron-left small ms-1"></i> Back to projects
+        </a>
+        <a class="btn btn-primary" href="#">
+          <i class="tio-city me-1"></i> Add new project
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- End Message Body -->
+</form>
+<!-- End Step Form -->
                     </div>        
                 </div>
               </div>
@@ -601,7 +703,7 @@
           <!-- Logo -->
           <div class="mb-5">
             <a class="navbar-brand" href="./index.html" aria-label="Space">
-               <p class="logo_create">limac<sub class="sb">®</sub></p>
+               <p class="logo_create">limac<sub class="sb sb_footer">®</sub></p>
             </a>
           </div>
           <!-- End Logo -->
@@ -722,13 +824,15 @@
   <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- JS Implementing Plugins -->
-  <script src="./assets/js/wizard-form.js"></script>
   <script src="./assets/vendor/hs-header/dist/hs-header.min.js"></script>
   <script src="./assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
   <script src="./assets/vendor/hs-show-animation/dist/hs-show-animation.min.js"></script>
   <script src="./assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
   <script src="./assets/vendor/aos/dist/aos.js"></script>
   <script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="./assets/vendor/hs-step-form/dist/hs-step-form.min.js"></script>
+  <script src="./assets/vendor/hs-toggle-state/dist/hs-toggle-state.min.js"></script>
+  <script src="./assets/vendor/hs-toggle-state/dist/hs-toggle-state.min.js"></script>
 
   <!-- JS Front -->
   <script src="./assets/js/theme.min.js"></script>
@@ -898,22 +1002,34 @@
           },
         },
       });
+
+          // INITIALIZATION OF STEP FORM
+    // =======================================================
+    new HSStepForm('.js-step-form', {
+      finish ($el) {
+        const $successMessageTempalte = $el.querySelector('.js-success-message').cloneNode(true)
+
+        $successMessageTempalte.style.display = 'block'
+
+        $el.style.display = 'none'
+        $el.parentElement.appendChild($successMessageTempalte)
+      }
+    })
+
+        // INITIALIZATION OF TOGGLE STATE
+    // =======================================================
+    new HSToggleState('.js-toggle-state')
+
+        // INITIALIZATION OF SWITCH TEXT
+    // =======================================================
+    new HSSwitchText('.js-switch-text', {
+      afterChange() {
+        document.querySelector('.js-nouislider').noUiSlider.set([this.target[0].text])
+      }
+    })
+
+    
     })()
   </script>
-
-  <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const selectServicio = document.getElementById('selectServicio');
-  const camposTraduccion = document.getElementById('camposTraduccion');
-  const camposInterpretacion = document.getElementById('camposInterpretacion');
-
-  selectServicio.addEventListener('change', function () {
-    const valor = selectServicio.value;
-    camposTraduccion.style.display = (valor === 'Traducción') ? 'block' : 'none';
-    camposInterpretacion.style.display = (valor === 'Interpretación') ? 'block' : 'none';
-  });
-});
-</script>
-
 </body>
 </html>
