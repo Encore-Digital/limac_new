@@ -23,6 +23,7 @@
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="./assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/vendor/quill/dist/quill.snow.css">
 </head>
 
 <body>
@@ -283,7 +284,7 @@
     <div class="bg-primary content-space-t-2 position-relative">
       <div class="container content-space-t-1 position-relative z-2 mt-2">
         <div class="row justify-content-lg-between mb-5">
-          <div class="col-lg-5 content-space-t-2 content-space-t-lg-3 mb-7 mb-lg-0">
+          <div class="col-lg-4 content-space-t-2 content-space-t-lg-3 mb-7 mb-lg-0">
             <!-- Heading -->
             <div class="mt-5 mb-7">
               <h2 class="h1 text-white">Comuníquese con nosotros</h2>
@@ -330,28 +331,25 @@
             <!-- End Row -->
           </div>
 
-          <div class="col-lg-6 mt-10 mb-5">
+          <div class="col-lg-8 mt-10 mb-5">
             <!-- Card -->
             <div class="card zi-2">
               <div class="card-body">
-
-                <!-- Form -->
-                <form>
-                  <div class="mb-4">
-                    <h3>Datos del servicio</h3>
-                  </div>
-                  <!-- Servicio -->
-                  <!-- Servicio -->
-                  <div class="mb-3">
-                    <label class="form-label visually-hidden" for="selectServicio">Servicio</label>
-                    <select id="selectServicio" class="form-select form-select-lg" name="servicio">
-                      <option value="" selected disabled>Seleccione un servicio</option>
-                      <option value="Traducción">Traducción</option>
-                      <option value="Interpretación">Interpretación</option>
-                    </select>
-                  </div>
-
-                  <!-- =================== CAMPOS PARA TRADUCCIÓN =================== -->
+<div class="container py-5">
+  <form>
+    <div class="form-paired-grid ">
+      <!-- Fila 1: Datos del servicio -->
+      <div class="form-label"><h3> Datos del servicio</h3></div>
+      <div>
+        <!-- ...todo tu bloque de "Datos del servicio"... -->
+        <div class="mb-3">
+          <label class="form-label visually-hidden" for="selectServicio">Servicio</label>
+          <select id="selectServicio" class="form-select form-select-lg" name="servicio">
+            <option value="" selected disabled>Seleccione un servicio</option>
+            <option value="Traducción">Traducción</option>
+            <option value="Interpretación">Interpretación</option>
+          </select>
+        </div>
                   <div id="camposTraduccion" style="display: none;">
 
                     <!-- Tipo de entrega -->
@@ -404,14 +402,12 @@
                       </select>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-7">
                       <label class="form-label" for="archivo">Adjuntar archivo</label>
                       <input class="form-control" type="file" id="archivo" name="archivo">
                     </div>
 
                   </div>
-
-                  <!-- =================== CAMPOS PARA INTERPRETACIÓN =================== -->
                   <div id="camposInterpretacion" style="display: none;">
 
                     <!--Evento Nombre -->
@@ -498,52 +494,44 @@
                     <div class="mb-3">
                       <input type="text" class="form-control form-control-lg" name="lugar" placeholder="Cantidad de Asistentes">
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-7">
                       <label class="form-label" for="archivo">Adjuntar archivo</label>
                       <input class="form-control" type="file" id="archivo" name="archivo">
                     </div>
                   </div>
+      </div>
 
-                  <!-- =================== CAMPOS DE INFORMACIÓN =================== -->
-                  <div class="mb-4">
-                    <h3>Su información</h3>
-                  </div>
-                  <!-- Nombre -->
-                  <div class="mb-3">
-                    <input type="text" class="form-control form-control-lg" name="nombre" placeholder="Nombre / Razón social">
-                  </div>
+      <!-- Fila 2: Su información -->
+      <div class="form-label"><h3>Su información</h3></div>
+      <div>
+        <div class="mb-3">
+          <input type="text" class="form-control form-control-lg" name="nombre" placeholder="Nombre / Razón social">
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control form-control-lg" name="correo" placeholder="Correo Electrónico">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control form-control-lg" name="telefono" placeholder="Teléfono">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control form-control-lg" name="documento" placeholder="DNI / RUC">
+        </div>
+      </div>
 
-                  <!-- Correo -->
-                  <div class="mb-3">
-                    <input type="email" class="form-control form-control-lg" name="correo" placeholder="Correo Electrónico">
-                  </div>
-
-                  <!-- Teléfono -->
-                  <div class="mb-3">
-                    <input type="text" class="form-control form-control-lg" name="telefono" placeholder="Teléfono">
-                  </div>
-
-                  <!-- DNI / RUC -->
-                  <div class="mb-3">
-                    <input type="text" class="form-control form-control-lg" name="documento" placeholder="DNI / RUC">
-                  </div>
-
-                  <div class="mb-4">
-                    <h3>Consulta</h3>
-                  </div>
-
-                  <!-- Consulta -->
-                  <div class="mb-3">
-                    <textarea class="form-control form-control-lg" name="mensaje" placeholder="Escríbanos su consulta" rows="4"></textarea>
-                  </div>
-
-                  <!-- Botón -->
-                  <div class="d-grid mb-2">
-                    <button type="submit" class="btn btn-primary btn-lg">Enviar solicitud</button>
-                  </div>
-                  <p>Al enviar este formulario, acepta la <a href="politica-de-privacidad.html">política de privacidad</a> y los <a href="terminos-y-condiciones.html">términos</a> de este sitio web.</p>
-                </form>
-                <!-- End Form -->
+      <!-- Fila 3: Consulta -->
+      <div class="form-label"><h3>Consulta</h3></div>
+      <div>
+        <div class="mb-3">
+          <textarea class="form-control form-control-lg" name="mensaje" placeholder="Escríbanos su consulta" rows="4"></textarea>
+        </div>
+        <div class="d-grid mb-2">
+          <button type="submit" class="btn btn-primary btn-lg">Enviar solicitud</button>
+        </div>
+        <p>Al enviar este formulario, acepta la <a href="politica-de-privacidad.html">política de privacidad</a> y los <a href="terminos-y-condiciones.html">términos</a> de este sitio web.</p>     
+      </div>
+    </div>
+  </form>
+</div>
               </div>
             </div>
             <!-- End Card -->
@@ -687,6 +675,11 @@
   <script src="./assets/vendor/hs-step-form/dist/hs-step-form.min.js"></script>
   <script src="./assets/vendor/hs-toggle-state/dist/hs-toggle-state.min.js"></script>
   <script src="./assets/vendor/hs-toggle-state/dist/hs-toggle-state.min.js"></script>
+  <script src="../assets/vendor/hs-file-attach/dist/hs-file-attach.min.js"></script>
+<script src="../assets/vendor/hs-count-characters/dist/js/hs-count-characters.js"></script>
+<script src="../assets/vendor/quill/dist/quill.min.js"></script>
+<script src="../assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
+
   <!-- JS Front -->
   <script src="./assets/js/theme.min.js"></script>
 
@@ -762,6 +755,25 @@
         once: true
       });
 
+      // INITIALIZATION OF FILE ATTACH
+      // =======================================================
+      new HSFileAttach('.js-file-attach')
+
+
+      // INITIALIZATION OF COUNT CHARACTERS
+      // =======================================================
+      new HSCountCharacters('.js-count-characters')
+
+
+      // INITIALIZATION OF QUILLJS EDITOR
+      // =======================================================
+      HSCore.components.HSQuill.init('.js-quill')
+
+
+      // INITIALIZATION OF DROPZONE
+      // =======================================================
+      HSCore.components.HSDropzone.init('.js-dropzone')
+      
       // INITIALIZATION OF SWIPER
       // =======================================================
       let activeIndex = 0
