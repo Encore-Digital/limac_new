@@ -22500,7 +22500,7 @@ label.form-control,
     margin-left: auto;
   }
   .navbar-expand-lg.navbar-end .navbar-sticky-top-scroller, .navbar-expand-lg.navbar-end .navbar-absolute-top-scroller {
-    margin-left: auto;
+    margin-left: 13%;
   }
   .navbar-expand-lg.navbar-floating {
     position: absolute;
@@ -27155,3 +27155,4 @@ body.index-page .navbar .nav-link {
 .sb_footer{
    padding-left: 3% !important;
 }
+

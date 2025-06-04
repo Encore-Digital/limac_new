@@ -28,14 +28,14 @@
 <body>
   <!-- ========== HEADER ========== -->
   <header id="header" class="navbar navbar-expand-lg navbar-end navbar-sticky-top navbar-dark navbar-show-hide navbar-toggle" data-hs-header-options='{
-            "fixMoment": 100,
+            "fixMoment": 1000,
             "fixEffect": "slide"
           }'>
     <div class="container">
       <nav class="js-mega-menu navbar-nav-wrap">
         <!-- Default Logo -->
         <a class="navbar-brand" href="./index.html" aria-label="Front">
-          <p class="logo_create logo_white">limac<sub class="sb">®</sub></p>
+           <p class="logo_create logo_white">limac<sub class="sb">®</sub></p>
         </a>
         <!-- End Default Logo -->
 
@@ -262,16 +262,16 @@
               <li class="nav-item">
                 <a class="hs-mega-menu-invoker nav-link" href="contacto.html" role="button" aria-expanded="false">Contacto</a>
               </li>
-
-              <!-- Button -->
-              <li class="nav-item">
-                <a class="btn btn-light btn-transition" href="https://www.limac.com.pe/login/" target="_blank">Iniciar Sesión</a>
-              </li>
               <!-- End Button -->
             </ul>
           </div>
+          <div class="navbar-absolute-top-scroller">
+           <div class="">
+            <div><a class="btn btn-light btn-transition" href="https://www.limac.com.pe/login/" target="_blank">Iniciar Sesión</a></div>
+          </div>
+        </div> 
         </div>
-        <!-- End Collapse -->
+        <!-- End Collapse -->       
       </nav>
     </div>
   </header>
@@ -336,246 +336,212 @@
               <div class="card-body">
 
                 <!-- Form -->
-                <form class="js-step-form"
-                      data-hs-step-form-options='{
-                        "progressSelector": "#contactoStepFormProgress",
-                        "stepsSelector": "#contactoStepFormContent",
-                        "endSelector": "#contactoStepFinishBtn"
-                      }'>
-                  <!-- Barra de pasos -->
-                  <ul id="contactoStepFormProgress" class="js-step-progress step step-sm step-icon-sm step-inline step-item-between mb-7">
-                    <li class="step-item">
-                      <a class="step-content-wrapper" href="javascript:;"
-                         data-hs-step-form-next-options='{
-                          "targetSelector": "#stepServicio"
-                        }'>
-                        <span class="step-icon step-icon-soft-dark">1</span>
-                        <div class="step-content">
-                          <span class="step-title">Datos del Servicio</span>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="step-item">
-                      <a class="step-content-wrapper" href="javascript:;"
-                         data-hs-step-form-next-options='{
-                           "targetSelector": "#stepInfo"
-                         }'>
-                        <span class="step-icon step-icon-soft-dark">2</span>
-                        <div class="step-content">
-                          <span class="step-title">Su información</span>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                  <!-- Fin barra de pasos -->
-                
-                  <!-- Contenido de los pasos -->
-                  <div id="contactoStepFormContent">
-                    <!-- Paso 1 -->
-                    <div id="stepServicio" class="active">
-                      <div class="mb-4">
-                        <h3>Datos del servicio</h3>
+                <form>
+                  <div class="mb-4">
+                    <h3>Datos del servicio</h3>
+                  </div>
+                  <!-- Servicio -->
+                  <!-- Servicio -->
+                  <div class="mb-3">
+                    <label class="form-label visually-hidden" for="selectServicio">Servicio</label>
+                    <select id="selectServicio" class="form-select form-select-lg" name="servicio">
+                      <option value="" selected disabled>Seleccione un servicio</option>
+                      <option value="Traducción">Traducción</option>
+                      <option value="Interpretación">Interpretación</option>
+                    </select>
+                  </div>
+
+                  <!-- =================== CAMPOS PARA TRADUCCIÓN =================== -->
+                  <div id="camposTraduccion" style="display: none;">
+
+                    <!-- Tipo de entrega -->
+                    <div class="mb-3">
+                      <label class="form-label visually-hidden" for="selectEntrega">Tipo de entrega</label>
+                      <select id="selectEntrega" class="form-select form-select-lg" name="tipo_entrega">
+                        <option value="" selected disabled>Seleccione el tipo de entrega</option>
+                        <option value="MS Word - versión digital">MS Word - versión digital</option>
+                        <option value="Certificada - versión digital">Certificada - versión digital</option>
+                        <option value="Certificada - versión impresa">Certificada - versión impresa</option>
+                        <option value="Oficial - versión impresa">Oficial - versión impresa</option>
+                      </select>
+                    </div>
+
+                    <!-- Idioma de origen -->
+                    <div class="mb-3">
+                      <label class="form-label visually-hidden" for="idiomaOrigen">Idioma de origen</label>
+                      <select id="idiomaOrigen" class="form-select form-select-lg" name="idioma_origen">
+                        <option value="" selected disabled>Idioma de origen</option>
+                        <option value="Español (Perú)">Español (Perú)</option>
+                        <option value="Español (España)">Español (España)</option>
+                        <option value="Inglés (EE.UU.)">Inglés (EE.UU.)</option>
+                        <option value="Inglés (Reino Unido)">Inglés (Reino Unido)</option>
+                        <option value="Francés (Francia)">Francés (Francia)</option>
+                        <option value="Francés (Canadá)">Francés (Canadá)</option>
+                        <option value="Alemán (Alemania)">Alemán (Alemania)</option>
+                        <option value="Italiano (Italia)">Italiano (Italia)</option>
+                        <option value="Portugués (Brasil)">Portugués (Brasil)</option>
+                        <option value="Portugués (Portugal)">Portugués (Portugal)</option>
+                        <option value="Quechua (Perú)">Quechua (Perú)</option>
+                      </select>
+                    </div>
+
+                    <!-- Idioma de destino -->
+                    <div class="mb-3">
+                      <label class="form-label visually-hidden" for="idiomaDestino">Idioma de destino</label>
+                      <select id="idiomaDestino" class="form-select form-select-lg" name="idioma_destino">
+                        <option value="" selected disabled>Idioma de destino</option>
+                        <option value="Español (Perú)">Español (Perú)</option>
+                        <option value="Español (España)">Español (España)</option>
+                        <option value="Inglés (EE.UU.)">Inglés (EE.UU.)</option>
+                        <option value="Inglés (Reino Unido)">Inglés (Reino Unido)</option>
+                        <option value="Francés (Francia)">Francés (Francia)</option>
+                        <option value="Francés (Canadá)">Francés (Canadá)</option>
+                        <option value="Alemán (Alemania)">Alemán (Alemania)</option>
+                        <option value="Italiano (Italia)">Italiano (Italia)</option>
+                        <option value="Portugués (Brasil)">Portugués (Brasil)</option>
+                        <option value="Portugués (Portugal)">Portugués (Portugal)</option>
+                        <option value="Quechua (Perú)">Quechua (Perú)</option>
+                      </select>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label" for="archivo">Adjuntar archivo</label>
+                      <input class="form-control" type="file" id="archivo" name="archivo">
+                    </div>
+
+                  </div>
+
+                  <!-- =================== CAMPOS PARA INTERPRETACIÓN =================== -->
+                  <div id="camposInterpretacion" style="display: none;">
+
+                    <!--Evento Nombre -->
+                    <div class="mb-3">
+                      <input type="text" class="form-control form-control-lg" name="hireUsFormNameLastName" id="hireUsFormLasttName" placeholder="¿Cuál es el nombre de su evento?">
+                    </div>
+
+                    <!-- IDIOMA DE ORIGEN -->
+                    <div class="mb-3">
+                      <select id="idiomaDestino" class="form-select form-select-lg" name="idioma_destino">
+                        <option value="" selected disabled>Idioma de origen: Inglés, Español, Francés... </option>
+                        <option value="Español (Perú)">Español</option>
+                        <option value="Inglés (EE.UU.)">Inglés</option>
+                        <option value="Francés (Francia)">Francés</option>
+                        <option value="Alemán (Alemania)">Alemán</option>
+                        <option value="Italiano (Italia)">Italiano</option>
+                        <option value="Portugués (Brasil)">Portugués</option>
+                        <option value="Quechua (Perú)">Japones</option>
+                        <option value="Quechua (Perú)">Quechua (Perú)</option>
+                      </select>
+                    </div>
+
+                    <!-- IDIOMA DESTINO -->
+                    <div class="mb-3">
+                      <select id="idiomaDestino" class="form-select form-select-lg" name="idioma_destino">
+                        <option value="" selected disabled>Idioma de destino: Inglés, Español, Francés... </option>
+                        <option value="Español (Perú)">Español</option>
+                        <option value="Inglés (EE.UU.)">Inglés</option>
+                        <option value="Francés (Francia)">Francés</option>
+                        <option value="Alemán (Alemania)">Alemán</option>
+                        <option value="Italiano (Italia)">Italiano</option>
+                        <option value="Portugués (Brasil)">Portugués</option>
+                        <option value="Quechua (Perú)">Japones</option>
+                        <option value="Quechua (Perú)">Quechua (Perú)</option>
+                      </select>
+                    </div>
+
+                    <div class="row">
+                      <!-- Fecha del evento -->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label" for="hireUsFormDetails">Fecha de Inicio</label>
+                        <input type="date" class="form-control form-control-lg" name="fecha_evento" id="fechaEvento" placeholder="Fecha del evento">
                       </div>
-                      <!-- Servicio -->
-                      <div class="mb-3">
-                        <label class="form-label visually-hidden" for="selectServicio">Servicio</label>
-                        <select id="selectServicio" class="form-select form-select-lg" name="servicio" required>
-                          <option value=""disabled>Seleccione un servicio</option>
-                          <option value="Traducción" selected>Traducción</option>
-                          <option value="Interpretación">Interpretación</option>
+
+                      <!-- Hora del evento-->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label" for="hireUsFormDetails">Hora de Inicio</label>
+                        <input type="time" class="form-control form-control-lg" name="hora_evento" id="horaEvento" placeholder="Seleccione una hora">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <!-- Fecha del evento -->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label" for="hireUsFormDetails">Fecha de Fin</label>
+                        <input type="date" class="form-control form-control-lg" name="fecha_evento" id="fechaEvento" placeholder="Fecha del evento">
+                      </div>
+
+                      <!-- Hora del evento-->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label" for="hireUsFormDetails">Fecha de Término</label>
+                        <input type="time" class="form-control form-control-lg" name="hora_evento" id="horaEvento" placeholder="Seleccione una hora">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <!-- Lugar -->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label" for="hireUsFormDetails">Lugar de Evento</label>
+                        <input type="text" class="form-control form-control-lg" name="lugar" placeholder="">
+                      </div>
+
+                      <!-- Equipos-->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label" for="hireUsFormDetails">¿Necesita Equipos?</label>
+                        <select id="idiomaDestino" class="form-select" name="idioma_destino">
+                          <option value="" selected disabled></option>
+                          <option value="Sí">Si</option>
+                          <option value="No">No</option>
                         </select>
                       </div>
-                    
-                      <!-- Campos para Traducción -->
-                      <div id="camposTraduccion" style="display: none;">
-                        <!-- Tipo de entrega -->
-                        <div class="mb-3">
-                          <label class="form-label visually-hidden" for="selectEntrega">Tipo de entrega</label>
-                          <select id="selectEntrega" class="form-select form-select-lg" name="tipo_entrega">
-                            <option value="" selected disabled>Seleccione el tipo de entrega</option>
-                            <option value="MS Word - versión digital">MS Word - versión digital</option>
-                            <option value="Certificada - versión digital">Certificada - versión digital</option>
-                            <option value="Certificada - versión impresa">Certificada - versión impresa</option>
-                            <option value="Oficial - versión impresa">Oficial - versión impresa</option>
-                          </select>
-                        </div>
-                        <!-- Idioma de origen -->
-                        <div class="mb-3">
-                          <label class="form-label visually-hidden" for="idiomaOrigen">Idioma de origen</label>
-                          <select id="idiomaOrigen" class="form-select form-select-lg" name="idioma_origen">
-                            <option value="" selected disabled>Idioma de origen</option>
-                            <option value="Español (Perú)">Español (Perú)</option>
-                            <option value="Español (España)">Español (España)</option>
-                            <option value="Inglés (EE.UU.)">Inglés (EE.UU.)</option>
-                            <option value="Inglés (Reino Unido)">Inglés (Reino Unido)</option>
-                            <option value="Francés (Francia)">Francés (Francia)</option>
-                            <option value="Francés (Canadá)">Francés (Canadá)</option>
-                            <option value="Alemán (Alemania)">Alemán (Alemania)</option>
-                            <option value="Italiano (Italia)">Italiano (Italia)</option>
-                            <option value="Portugués (Brasil)">Portugués (Brasil)</option>
-                            <option value="Portugués (Portugal)">Portugués (Portugal)</option>
-                            <option value="Quechua (Perú)">Quechua (Perú)</option>
-                          </select>
-                        </div>
-                        <!-- Idioma de destino -->
-                        <div class="mb-3">
-                          <label class="form-label visually-hidden" for="idiomaDestino">Idioma de destino</label>
-                          <select id="idiomaDestino" class="form-select form-select-lg" name="idioma_destino">
-                            <option value="" selected disabled>Idioma de destino</option>
-                            <option value="Español (Perú)">Español (Perú)</option>
-                            <option value="Español (España)">Español (España)</option>
-                            <option value="Inglés (EE.UU.)">Inglés (EE.UU.)</option>
-                            <option value="Inglés (Reino Unido)">Inglés (Reino Unido)</option>
-                            <option value="Francés (Francia)">Francés (Francia)</option>
-                            <option value="Francés (Canadá)">Francés (Canadá)</option>
-                            <option value="Alemán (Alemania)">Alemán (Alemania)</option>
-                            <option value="Italiano (Italia)">Italiano (Italia)</option>
-                            <option value="Portugués (Brasil)">Portugués (Brasil)</option>
-                            <option value="Portugués (Portugal)">Portugués (Portugal)</option>
-                            <option value="Quechua (Perú)">Quechua (Perú)</option>
-                          </select>
-                        </div>
-                        <!-- Archivo -->
-                        <div class="mb-3">
-                          <label class="form-label" for="archivo">Adjuntar archivo</label>
-                          <input class="form-control" type="file" id="archivo" name="archivo">
-                        </div>
-                      </div>
-                    
-                      <!-- Campos para Interpretación -->
-                      <div id="camposInterpretacion" style="display: none;">
-                        <!-- Nombre del evento -->
-                        <div class="mb-3">
-                          <input type="text" class="form-control form-control-lg" name="nombre_evento" id="nombreEvento" placeholder="¿Cuál es el nombre de su evento?">
-                        </div>
-                        <!-- Idioma origen -->
-                        <div class="mb-3">
-                          <select class="form-select form-select-lg" name="idioma_origen_interpretacion">
-                            <option value="" selected disabled>Idioma de origen: Inglés, Español, Francés... </option>
-                            <option value="Español">Español</option>
-                            <option value="Inglés">Inglés</option>
-                            <option value="Francés">Francés</option>
-                            <option value="Alemán">Alemán</option>
-                            <option value="Italiano">Italiano</option>
-                            <option value="Portugués">Portugués</option>
-                            <option value="Japones">Japones</option>
-                            <option value="Quechua (Perú)">Quechua (Perú)</option>
-                          </select>
-                        </div>
-                        <!-- Idioma destino -->
-                        <div class="mb-3">
-                          <select class="form-select form-select-lg" name="idioma_destino_interpretacion">
-                            <option value="" selected disabled>Idioma de destino: Inglés, Español, Francés... </option>
-                            <option value="Español">Español</option>
-                            <option value="Inglés">Inglés</option>
-                            <option value="Francés">Francés</option>
-                            <option value="Alemán">Alemán</option>
-                            <option value="Italiano">Italiano</option>
-                            <option value="Portugués">Portugués</option>
-                            <option value="Japones">Japones</option>
-                            <option value="Quechua (Perú)">Quechua (Perú)</option>
-                          </select>
-                        </div>
-                        <div class="row">
-                          <!-- Fecha inicio -->
-                          <div class="col-md-6 mb-3">
-                            <label class="form-label" for="fechaInicioEvento">Fecha de Inicio</label>
-                            <input type="date" class="form-control form-control-lg" name="fecha_inicio_evento" id="fechaInicioEvento">
-                          </div>
-                          <!-- Hora inicio -->
-                          <div class="col-md-6 mb-3">
-                            <label class="form-label" for="horaInicioEvento">Hora de Inicio</label>
-                            <input type="time" class="form-control form-control-lg" name="hora_inicio_evento" id="horaInicioEvento">
-                          </div>
-                        </div>
-                        <div class="row">
-                          <!-- Fecha fin -->
-                          <div class="col-md-6 mb-3">
-                            <label class="form-label" for="fechaFinEvento">Fecha de Fin</label>
-                            <input type="date" class="form-control form-control-lg" name="fecha_fin_evento" id="fechaFinEvento">
-                          </div>
-                          <!-- Hora fin -->
-                          <div class="col-md-6 mb-3">
-                            <label class="form-label" for="horaFinEvento">Hora de Término</label>
-                            <input type="time" class="form-control form-control-lg" name="hora_fin_evento" id="horaFinEvento">
-                          </div>
-                        </div>
-                        <div class="row">
-                          <!-- Lugar -->
-                          <div class="col-md-6 mb-3">
-                            <label class="form-label" for="lugarEvento">Lugar de Evento</label>
-                            <input type="text" class="form-control form-control-lg" name="lugar_evento" id="lugarEvento">
-                          </div>
-                          <!-- Equipos -->
-                          <div class="col-md-6 mb-3">
-                            <label class="form-label" for="necesitaEquipos">¿Necesita Equipos?</label>
-                            <select id="necesitaEquipos" class="form-select" name="necesita_equipos">
-                              <option value="" selected disabled></option>
-                              <option value="Sí">Sí</option>
-                              <option value="No">No</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="mb-3">
-                          <input type="text" class="form-control form-control-lg" name="cantidad_asistentes" placeholder="Cantidad de Asistentes">
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="archivoInterpretacion">Adjuntar archivo</label>
-                          <input class="form-control" type="file" id="archivoInterpretacion" name="archivoInterpretacion">
-                        </div>
-                      </div>
-                    
-                      <!-- Navegación paso -->
-                      <div class="d-flex align-items-center">
-                        <div class="ms-auto">
-                          <button type="button" class="btn btn-primary"
-                                  data-hs-step-form-next-options='{
-                                    "targetSelector": "#stepInfo"
-                                  }'>
-                            Siguiente <i class="bi-chevron-right small"></i>
-                          </button>
-                        </div>
-                      </div>
                     </div>
-                    <!-- Paso 2 -->
-                    <div id="stepInfo" style="display: none;">
-                      <div class="mb-4">
-                        <h3>Su información</h3>
-                      </div>
-                      <div class="mb-3">
-                        <input type="text" class="form-control form-control-lg" name="nombre" placeholder="Nombre / Razón social" required>
-                      </div>
-                      <div class="mb-3">
-                        <input type="email" class="form-control form-control-lg" name="correo" placeholder="Correo Electrónico" required>
-                      </div>
-                      <div class="mb-3">
-                        <input type="text" class="form-control form-control-lg" name="telefono" placeholder="Teléfono">
-                      </div>
-                      <div class="mb-3">
-                        <input type="text" class="form-control form-control-lg" name="documento" placeholder="DNI / RUC">
-                      </div>
-                      <div class="mb-4">
-                        <h3>Consulta</h3>
-                      </div>
-                      <div class="mb-3">
-                        <textarea class="form-control form-control-lg" name="mensaje" placeholder="Escríbanos su consulta" rows="4"></textarea>
-                      </div>
-                      <!-- Navegación paso -->
-                      <div class="d-flex align-items-center">
-                        <button type="button" class="btn btn-ghost-secondary me-2"
-                           data-hs-step-form-prev-options='{
-                             "targetSelector": "#stepServicio"
-                           }'>
-                          <i class="bi-chevron-left small"></i> Anterior
-                        </button>
-                        <div class="ms-auto">
-                          <button id="contactoStepFinishBtn" type="submit" class="btn btn-primary">Enviar</button>
-                        </div>
-                      </div>
-                      <p class="mt-3">Al enviar este formulario, acepta la <a href="politica-de-privacidad.html">política de privacidad</a> y los <a href="terminos-y-condiciones.html">términos</a> de este sitio web.</p>
+
+                    <div class="mb-3">
+                      <input type="text" class="form-control form-control-lg" name="lugar" placeholder="Cantidad de Asistentes">
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="archivo">Adjuntar archivo</label>
+                      <input class="form-control" type="file" id="archivo" name="archivo">
                     </div>
                   </div>
-                  <!-- Fin pasos -->
+
+                  <!-- =================== CAMPOS DE INFORMACIÓN =================== -->
+                  <div class="mb-4">
+                    <h3>Su información</h3>
+                  </div>
+                  <!-- Nombre -->
+                  <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg" name="nombre" placeholder="Nombre / Razón social">
+                  </div>
+
+                  <!-- Correo -->
+                  <div class="mb-3">
+                    <input type="email" class="form-control form-control-lg" name="correo" placeholder="Correo Electrónico">
+                  </div>
+
+                  <!-- Teléfono -->
+                  <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg" name="telefono" placeholder="Teléfono">
+                  </div>
+
+                  <!-- DNI / RUC -->
+                  <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg" name="documento" placeholder="DNI / RUC">
+                  </div>
+
+                  <div class="mb-4">
+                    <h3>Consulta</h3>
+                  </div>
+
+                  <!-- Consulta -->
+                  <div class="mb-3">
+                    <textarea class="form-control form-control-lg" name="mensaje" placeholder="Escríbanos su consulta" rows="4"></textarea>
+                  </div>
+
+                  <!-- Botón -->
+                  <div class="d-grid mb-2">
+                    <button type="submit" class="btn btn-primary btn-lg">Enviar solicitud</button>
+                  </div>
+                  <p>Al enviar este formulario, acepta la <a href="politica-de-privacidad.html">política de privacidad</a> y los <a href="terminos-y-condiciones.html">términos</a> de este sitio web.</p>
                 </form>
                 <!-- End Form -->
               </div>
