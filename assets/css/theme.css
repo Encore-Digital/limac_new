@@ -27178,3 +27178,24 @@ body.index-page .navbar .nav-link {
     padding-top: 1.5rem;
   }
 }
+
+body {
+  overflow-x: hidden !important;
+}
+
+.swiper,
+.swiper-wrapper {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+.swiper,
+.swiper-wrapper,
+.swiper-slide {
+  max-width: 100vw !important;
+  box-sizing: border-box;
+}
