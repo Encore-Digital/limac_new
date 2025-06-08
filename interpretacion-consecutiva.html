@@ -262,10 +262,13 @@
               <li class="nav-item">
                 <a class="hs-mega-menu-invoker nav-link" href="contacto.html" role="button" aria-expanded="false">Contacto</a>
               </li>
-              <!-- End Button -->
+              <!-- Button -->
+              <li class="nav-item d-lg-none">
+                <a class="btn btn-primary btn-transition" href="https://www.limac.com.pe/login/" target="_blank">Iniciar Sesión</a>
+              </li>               
             </ul>
           </div>
-          <div class="navbar-absolute-top-scroller">
+          <div class="navbar-absolute-top-scroller d-none d-lg-block">
            <div class="">
             <div><a class="btn btn-primary btn-transition" href="https://www.limac.com.pe/login/" target="_blank">Iniciar Sesión</a></div>
           </div>
@@ -841,33 +844,27 @@
       });
 
     //menu-espaciado 
-        document.addEventListener("DOMContentLoaded", function () {
-        const menu = document.getElementById("miMenu");
-        
-        // Verifica si la pantalla es >= 992px
-        if (window.matchMedia("(min-width: 992px)").matches) {
-          if (menu.classList.contains("mt-n4")) {
-            menu.classList.remove("mt-n4");
-            menu.classList.add("mt-n2");
-          }
+    document.addEventListener("DOMContentLoaded", function () {
+      const menu = document.getElementById("miMenu");
+    
+      function actualizarMenuMargin() {
+        if (window.matchMedia("(max-width: 992px)").matches) {
+          // Para móviles y tablets: debe tener mt-n2
+          menu.classList.remove("mt-n4");
+          menu.classList.add("mt-n2");
+        } else {
+          // Para escritorio: debe tener mt-n4
+          menu.classList.remove("mt-n2");
+          menu.classList.add("mt-n4");
         }
-      
-        // Si quieres que también responda al redimensionamiento:
-        window.addEventListener("resize", function () {
-          if (window.matchMedia("(max-width: 992px)").matches) {
-            if (menu.classList.contains("mt-n4")) {
-              menu.classList.remove("mt-n4");
-              menu.classList.add("mt-n2");
-            }
-          } else {
-            // Vuelve a mt-n4 si el ancho baja de 992px
-            if (menu.classList.contains("mt-n2")) {
-              menu.classList.remove("mt-n2");
-              menu.classList.add("mt-n4");
-            }
-          }
-        });
-      }); 
+      }
+    
+      // Ejecutar al cargar la página
+      actualizarMenuMargin();
+    
+      // Ejecutar al redimensionar la ventana
+      window.addEventListener("resize", actualizarMenuMargin);
+    });
 
 
 
